@@ -1,0 +1,23 @@
+{
+  "name": "thisforthat",
+  "version": "2.0.0",
+  "description": "A fun timekeeping app enabling users to digitally send / guarantee their time. Users can trade their time as a commodity.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "server": "nodemon server"
+  },
+  "author": "ThisforThat Team",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "config": "^3.1.0",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.5.1",
+    "sequelize": "^5.8.5"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.19.0"
+  }
+}
