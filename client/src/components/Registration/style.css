@@ -162,4 +162,8 @@ box-shadow: 0 1px 0 0 blue;
 .input-field .prefix.active {
 color: blue;
 }
+.card-panel{
+max-width: 80%;
+margin-top: 1%;
+}
    
