@@ -9,8 +9,9 @@ module.exports = function (app) {
   // Register
   app.post("/api/register", function (req, res) {
     console.log(req.body);
-    db.User.create(req.body).then(function () {
-      res.redirect(307, "/api/login");
+    db.User.create(req.body).then(function (user) {
+      // res.redirect(307, "/api/login");
+      res.status(201).json(user);
     }).catch(function (err) {
       console.log(err);
       res.json(err);

@@ -1,12 +1,83 @@
 
 import React, { Component } from 'react';
+import history from '../../history'
+import axios from 'axios';
 import "./style.css";
 
+
+
 class Registration extends Component {
+    state = {
+        username: '',
+        email: '',
+        password: '',
+        showError: '',
+        loginError: '',
+        registerError: ''
+    }
+
+    handleTextChange = evt => {
+        const { name, value } = evt.target
+        this.setState({ [name]: value })
+    }
+
+    handleSubmit = evt => {
+        evt.preventDefault();
+        // functionToPushDataIntoDB(this.state)
+        console.log(this.state);
+    }
+
+
+    registerUser = e => {
+        e.preventDefault();
+        const { username, password, email } = this.state;
+        if (username === '' || password === '' || email === '') {
+          this.setState({
+            showError: true,
+            loginError: false,
+            registerError: true,
+          });
+        } else {
+          axios
+          //HERE WE POST TO THE BACKEND ROUTES
+            .post('http://localhost:5001/api/register', {
+              email,
+              username,
+              password
+            })
+            .then(response => {
+            //   console.log("response:", response);
+            //   this.setState({
+            //     messageFromServer: response.status,
+            //     showError: false,
+            //     loginError: false,
+            //     registerError: false,
+            //   });
+            if(response.status === 201){
+              this.props.history.push('/signinform');
+            } 
+            })
+            .catch(error => {
+              console.log(error);
+              console.log(error.response);
+            //   if (error.response.data === 'username or email already taken') {
+            //     this.setState({
+            //       showError: true,
+            //       loginError: true,
+            //       registerError: false,
+                });
+                
+              //}
+            //});
+        }
+      };
+
+    
+
     render() {
         return (
             <div>
-                <center>
+                {/* <center> */}
                     <div class="card-panel white light-2">
                         <div id="top">
                                 <div class="card-panel blue darken-4">
@@ -22,7 +93,68 @@ class Registration extends Component {
                         <div class="container signin">
                             <p> <a href="/">Already have an account?</a></p>
                         </div>
-                        <div class="container">
+
+                        <form
+                            id="RecruitForm"
+                            onSubmit={this.registerUser}
+                        >
+                            <input
+                                className="form-group"
+                                type="text"
+                                name="username"
+                                placeholder="User Name"
+                                onChange={this.handleTextChange}
+                            />
+                                <input
+                                    className="form-group"
+                                    type="text"
+                                    name="email"
+                                    placeholder=" Email"
+                                    onChange={this.handleTextChange}
+                                />
+                                <select
+                                    className="form-group"
+                                    type="text"
+                                    name="position"
+                                    onChange={this.handleTextChange}
+                                >
+                                </select>
+                                <input
+                                    className="form-group"
+                                    type="password"
+                                    name="password"
+                                    placeholder="Password"
+                                    onChange={this.handleTextChange}
+                                />
+                                <br />
+                                <input type="submit" value="Register" />
+                            </form>
+            </div>
+                        
+              {/* <select
+                            className="form-group"
+                            type="text"
+                            name="position"
+                            onChange={this.handleTextChange}
+                        >
+                            <option value="PG">PG</option>
+                            <option value="SG">SG</option>
+                            <option value="SF">SF</option>
+                            <option value="PF">PF</option>
+                            <option value="C">C</option>
+                        </select>
+                        <input
+                            className="form-group"
+                            type="text"
+                            name="class"
+                            placeholder="Class"
+                            onChange={this.handleTextChange}
+                        /> */}
+                        {/* <br />
+                        <input type="submit" value="Add Player" /> */}
+        {/* </form> */}
+        {/* </div> */}
+                        {/* <div class="container">
                             <div class="form-group">
                                 <label for="email"><b>Enter your Email:</b></label>
                                 <input class="form-control" type="email" placeholder="Enter email" name="email" id="email-input" required></input>
@@ -44,17 +176,24 @@ class Registration extends Component {
                 you” and is a strong ally to abuse victims.</p>
                         <p>By clicking the ‘I Agree’ button below, you designate that you will not host, harbor or pursue criminal
                 activities via ThisforThat and will be an ally to those who are bullied. </p>
-                        <p></p>
-                        <p></p>
-                        <div class="container signin">
 
-                        <a href="/https://www.stopbullying.gov/" id="button" className="btn-large waves-effect waves-light red">I prefer to stay a bully</a>
-                            
-                            <p></p>
-                            <a href="/signinform" id="button" className="btn-large waves-effect waves-light green">I agree</a>
-                        </div>
-                    </div>
-                </center>
+                        <form action="#"> */}
+                {/* <p>
+                                <label>
+                                    <input type="checkbox" />
+                                    <span>I Agree</span>
+                                </label>
+                            </p> */}
+
+                {/* <div class="container signin">
+                    <p><a href="https://www.stopbullying.gov/">I prefer to stay a bully</a></p>
+                </div>
+                        </form>
+            <button id="transreques-submit" class="btn btn-lg pull-right" href="profile.html">Submit!</button>
+                    </div >
+                </center >
+            </div > */}
+
             </div>
         )
     }
