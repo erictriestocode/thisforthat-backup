@@ -24,7 +24,7 @@ class Navbar extends Component {
         <ul class="sidenav" id="mobile-demo">
           <li><a href="/home">ThisforThat</a></li>
           <li><a href="/transaction">Transactions</a></li>
-          <li><a href="/profile">Profile</a></li>
+          <li><a href="/profile"><i className="fas fa-user-circle fa-lg"></i></a></li>
         </ul>
       </div>
     );
