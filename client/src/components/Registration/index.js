@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import "./style.css";
 
@@ -8,7 +9,6 @@ class Registration extends Component {
                 <center>
                     <div class="card-panel white light-2">
                         <div id="top">
-                            <form id="register">
                                 <div class="card-panel blue darken-4">
                                     <span class="grey-text text-lighten-2" id="appName">
                                         <h1>Register</h1>
@@ -17,7 +17,6 @@ class Registration extends Component {
                                         <p> Please fill in this form to create an account. </p>
                                     </span>
                                 </div>
-                            </form>
                         </div>
 
                         <div class="container signin">
@@ -30,11 +29,11 @@ class Registration extends Component {
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="firstname"><b>Username</b></label>
+                            <label for="firstname"><b>Username:</b></label>
                             <input class="form-control" type="text" placeholder="Enter preferred username" name="username" id="firstname-input" required></input>
                         </div>
                         <div class="form-group">
-                            <label for="psw"><b>Password</b></label>
+                            <label for="psw"><b>Password;</b></label>
                             <input class="form-control" type="password" placeholder="Enter Password" name="psw" id="password-input" required></input>
                         </div>
                         <p>The content and functionality of this website is designed for law-abiding citizens with the intent to
@@ -45,19 +44,15 @@ class Registration extends Component {
                 you” and is a strong ally to abuse victims.</p>
                         <p>By clicking the ‘I Agree’ button below, you designate that you will not host, harbor or pursue criminal
                 activities via ThisforThat and will be an ally to those who are bullied. </p>
-                        <form action="#">
-                            <p>
-                                <label>
-                                    <input type="checkbox" />
-                                    <span>I Agree</span>
-                                </label>
-                            </p>
+                        <p></p>
+                        <p></p>
+                        <div class="container signin">
 
-                            <div class="container signin">
-                                <p><a href="https://www.stopbullying.gov/">I prefer to stay a bully</a></p>
-                            </div>
-                        </form>
-                        <button id="transreques-submit" class="btn btn-lg pull-right" href="profile.html">Submit!</button>
+                        <a href="/https://www.stopbullying.gov/" id="button" className="btn-large waves-effect waves-light red">I prefer to stay a bully</a>
+                            
+                            <p></p>
+                            <a href="/signinform" id="button" className="btn-large waves-effect waves-light green">I agree</a>
+                        </div>
                     </div>
                 </center>
             </div>
