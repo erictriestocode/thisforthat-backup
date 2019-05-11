@@ -1,75 +1,44 @@
-
+//set imports
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import "./style.css";
+import "./nav.js";
 
-class Registration extends Component {
-    render() {
-        return (
-            <div>
-                <center>
-                    <div class="card-panel white light-2">
-                        <div id="top">
-                            <form id="register">
-                                <div class="card-panel blue darken-4">
-                                    <span class="grey-text text-lighten-2" id="appName">
-                                        <h1>Register</h1>
-                                    </span>
-                                    <span class="grey-text text-lighten-2">
-                                        <p> Please fill in this form to create an account. </p>
-                                    </span>
-                                </div>
-                            </form>
-                        </div>
+class Navbar extends Component {
+  render() {
+    const style = {
+      color: 'white'
+    };
+    return (
 
-                        <div class="container signin">
-                            <p>
-                                <Link to='/signinform'>
-                                <a href="/">Already have an account?</a>
-                                </Link>
-                            </p>
-                        </div>
-                        <div class="container">
-                            <div class="form-group">
-                                <label for="email"><b>Enter your Email:</b></label>
-                                <input class="form-control" type="email" placeholder="Enter email" name="email" id="email-input" required></input>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="firstname"><b>Username</b></label>
-                            <input class="form-control" type="text" placeholder="Enter preferred username" name="username" id="firstname-input" required></input>
-                        </div>
-                        <div class="form-group">
-                            <label for="psw"><b>Password</b></label>
-                            <input class="form-control" type="password" placeholder="Enter Password" name="psw" id="password-input" required></input>
-                        </div>
-                        <p>The content and functionality of this website is designed for law-abiding citizens with the intent to
-                simplify and quantify law-abiding activities.</p>
-                        <p>ThisforThat does not condone the use of its’ proprietary app for transactions based in coercion or
-                            manipulation; any criminals in use of app for malice intent will be removed from the community.
-                            ThisforThat encourages users to follow the golden rule, “do onto others as you would have them do onto
-                you” and is a strong ally to abuse victims.</p>
-                        <p>By clicking the ‘I Agree’ button below, you designate that you will not host, harbor or pursue criminal
-                activities via ThisforThat and will be an ally to those who are bullied. </p>
-                        <form action="#">
-                            <p>
-                                <label>
-                                    <input type="checkbox" /> 
-                                    <span>I Agree</span>
-                                </label>
-                            </p>
-
-                            <div class="container signin">
-                                <p><a href="https://www.stopbullying.gov/">I prefer to stay a bully</a></p>
-                            </div>
-                        </form>
-                        <Link to='/home'>
-                        <button id="transreques-submit" class="btn btn-lg pull-right" href="profile.html">Submit!</button>
-                        </Link>
-                    </div>
-                </center>
-            </div>
-        )
-    }
+      <div>
+        < nav >
+          <div class="nav-wrapper">
+            <a href="/home" class="brand-logo">ThisforThat</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+              <li><a href="/transaction">Transactions</a></li>
+              <li><a href="/profile"><i className="fas fa-user-circle fa-lg"></i></a></li>
+              <li>
+                <form>
+                  <div class="input-field">
+                    <input id="search" type="search" required></input>
+                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                    <i class="material-icons">close</i>
+                  </div>
+                </form>
+              </li>
+            </ul>
+          </div>
+        </nav >
+          <ul class="sidenav" id="mobile-demo">
+            <li><a href="/home">ThisforThat</a></li>
+            <li><a href="/transaction">Transactions</a></li>
+            <li><a href="/profile"><i className="fas fa-user-circle fa-lg"></i></a></li>
+          </ul>
+        </div>
+    );
+  }
 }
-export default Registration
+
+export default Navbar
