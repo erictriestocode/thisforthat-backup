@@ -5,10 +5,17 @@ import "./style-profile.css";
 class Profile extends Component {
     render() {
     return (
-        <div class="wrapper">
+        <div>
+        <div class="wrapper-Summary">
         <section id="main-content">
-             <p>balance </p>
+        <container>
+             <p>Total amount of outstanding requested time from others</p>
              <p>60 </p>
+    </container>
+    <container>
+             <p>Total amount of outstanding payed time to others </p>
+             <p>60 </p>
+    </container>
          </section>
       
         <section id="sidebar">
@@ -74,6 +81,7 @@ class Profile extends Component {
         </div>
         </section>
 
+        </div>
         </div>
         //         <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 

@@ -14,12 +14,12 @@
   height: 1%;
 
 }
-.wrapper {
+.wrapper-Summary {
     /* Box-model */
-    width: 900px;
+    width: 1024px;
   
     /* Positioning */
-    margin: 40px auto;
+    margin: 0px auto;
   }
   /* #main-content, */
   #sidebar {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import "./style.css";
+// import "./animate.js";
 
 
 class LandingPage extends Component {
@@ -16,7 +17,7 @@ class LandingPage extends Component {
                 </div>
                 <div className="row center">
                     <Link to='/registration'>
-                    <a href="#" id="button" className="btn-large waves-effect waves-light orange">Let's Get Started</a>
+                    <a href="/registration" id="button" className="btn-large waves-effect waves-light orange">Let's Get Started</a>
                     </Link>
                 </div>
                 <br /><br />
@@ -30,7 +31,7 @@ class LandingPage extends Component {
                     <h5 className="center">Learn</h5>
 
                     <p className="light">
-                        ThisforThat is here to help users grow & develop desired skills by trading their time to help others.
+                        Develop & finetune desired skills by trading your time with other users
                 </p>
                 </div>
             </div>
@@ -43,7 +44,7 @@ class LandingPage extends Component {
                     <h5 className="center">Grow</h5>
 
                     <p className="light">
-                        Grow your network and meet new talented friends with ThisforThat.
+                        Grow your network & meet new talented friends
                 </p>
                 </div>
             </div>
@@ -57,7 +58,7 @@ class LandingPage extends Component {
                     <h5 className="center">Trade</h5>
 
                     <p className="light">
-                        Learn the art of trading & learn valuable life skills </p>
+                        Learn the art of trading & capitalize on your desirable skill-sets </p>
                 </div>
             </div>
             

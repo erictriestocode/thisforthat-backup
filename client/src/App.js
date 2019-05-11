@@ -20,7 +20,7 @@ class App extends Component {
       <div>
 
         <BrowserRouter>
-          <Navbar />
+         <Navbar/>
           <Switch>
             <Route exact path="/" component={LandingPage} />
             <Route path="/signinform" component={SigninForm} />

@@ -1,7 +1,7 @@
 {
   "development": {
-    "username": "appuser",
-    "password": "password",
+    "username": "root",
+    "password": "Milo81rico**",
     "database": "timefortime_db",
     "host": "localhost",
     "dialect": "mysql"
