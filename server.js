@@ -11,7 +11,7 @@ var passport = require("./config/passport/passport");
 var db = require("./models");
 
 var app = express();
-var PORT = process.env.PORT || 5001;
+var PORT = process.env.PORT || 5000;
 
 // ****** EXPRESS-SESSION & PASSPORT ******************
 // use sessions to keep track of user's login status

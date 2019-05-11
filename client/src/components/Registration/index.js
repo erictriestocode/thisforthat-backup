@@ -39,7 +39,7 @@ class Registration extends Component {
         } else {
           axios
           //HERE WE POST TO THE BACKEND ROUTES
-            .post('http://localhost:5001/api/register', {
+            .post('http://localhost:5000/api/register', {
               email,
               username,
               password
@@ -58,7 +58,7 @@ class Registration extends Component {
             })
             .catch(error => {
               console.log(error);
-              console.log(error.response);
+            //   console.log(error.response);
             //   if (error.response.data === 'username or email already taken') {
             //     this.setState({
             //       showError: true,
