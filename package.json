@@ -1,26 +1,38 @@
 {
   "name": "thisforthat",
   "version": "2.0.0",
-  "description": "A fun timekeeping app enabling users to digitally send / guarantee their time. Users can trade their time as a commodity.",
+  "description": "Project 2 Starter",
   "main": "server.js",
   "scripts": {
-    "start": "node server",
-    "server": "nodemon server"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
-  "author": "ThisforThat Team",
   "license": "ISC",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
-    "bcryptjs": "^2.4.3",
-    "config": "^3.1.0",
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.2.0",
     "express": "^4.16.4",
-    "express-validator": "^5.3.1",
-    "jsonwebtoken": "^8.5.1",
+    "express-session": "^1.15.6",
     "mysql2": "^1.6.5",
-    "sequelize": "^5.8.5"
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "request": "^2.88.0",
+    "sequelize": "^4.43.0"
   },
-  "devDependencies": {
-    "concurrently": "^4.1.0",
-    "nodemon": "^1.19.0"
-  }
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erictriestocode/Project-3"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/erictriestocode/Project-3"
+  },
+  "homepage": "https://github.com/erictriestocode/Project-3"
 }
