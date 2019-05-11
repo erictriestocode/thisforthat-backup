@@ -1,5 +1,6 @@
 
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import "./style.css";
 
 class Registration extends Component {
@@ -22,7 +23,11 @@ class Registration extends Component {
                         </div>
 
                         <div class="container signin">
-                            <p> <a href="/">Already have an account?</a></p>
+                            <p>
+                                <Link to='/signinform'>
+                                <a href="/">Already have an account?</a>
+                                </Link>
+                            </p>
                         </div>
                         <div class="container">
                             <div class="form-group">
@@ -49,7 +54,7 @@ class Registration extends Component {
                         <form action="#">
                             <p>
                                 <label>
-                                    <input type="checkbox" />
+                                    <input type="checkbox" /> 
                                     <span>I Agree</span>
                                 </label>
                             </p>
@@ -58,7 +63,9 @@ class Registration extends Component {
                                 <p><a href="https://www.stopbullying.gov/">I prefer to stay a bully</a></p>
                             </div>
                         </form>
+                        <Link to='/home'>
                         <button id="transreques-submit" class="btn btn-lg pull-right" href="profile.html">Submit!</button>
+                        </Link>
                     </div>
                 </center>
             </div>
