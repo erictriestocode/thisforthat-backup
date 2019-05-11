@@ -11,6 +11,7 @@ import LandingPage from "./components/landingPage";
 import Help from './components/Help';
 import Registration from './components/Registration';
 import Transaction from './components/Transaction';
+// import history from './history';
 
 class App extends Component {
   render() {
