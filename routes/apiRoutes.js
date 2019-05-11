@@ -34,4 +34,21 @@ module.exports = function (app) {
     req.logout();
     res.redirect("/");
   });
+
+  // Get all transactions
+  app.get("/api/findall", function(req, res) {
+    // Finding all Users, and then returning them to the user as JSON.
+    // Sequelize queries are asynchronous, which helps with perceived speed.
+    // If we want something to be guaranteed to happen after the query, we'll use
+    // the .then function
+    console.log("hitting the findall API route!");
+    // console.log(res);
+    db.transaction.findAll({}).then(function(results) {
+      // results are available to us inside the .then
+      res.json(results);
+    });
+  });
 };
+
+
+
