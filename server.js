@@ -1,30 +1,56 @@
-// MAIN SERVER FILE
-const express = require('express');
-const db = require("./models")
+require("dotenv").config();
+var express = require("express");
+var passport = require('passport');
+var session = require('express-session');
+var bodyParser = require('body-parser');
 
+// ****** PASSPORT CONFIG ******************
+var passport = require("./config/passport/passport");
+// ****** END PASSPORT CONFIG **************
 
-const app = express();
-const PORT = process.env.PORT || 5000;
+var db = require("./models");
+
+var app = express();
+var PORT = process.env.PORT || 5000;
+
+// ****** EXPRESS-SESSION & PASSPORT ******************
+// use sessions to keep track of user's login status
+app.use(session({ secret: "robot author", resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
+// ****** END EXPRESS-SESSION & PASSPORT **************
 
 // Middleware
-app.use(express.json({ extended: false}));
-
-
-// Test route for API
-app.get('/', (req, res) => res.send('API Running!'));
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(express.static(__dirname + "/public/html"));
 
 // Routes
-app.use('/api/users', require('./routes/api/users'));
-app.use('/api/auth', require('./routes/api/auth'));
-app.use('/api/profile', require('./routes/api/profile'));
-app.use('/api/transactions', require('./routes/api/transactions'));
+require("./routes/apiRoutes")(app);
+// require("./routes/htmlRoutes")(app); not needed
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "./client/public/index.html"));
+});
 
+// if set to true the tables gets dropped and created
+var syncOptions = { force: false };
 
-db.sequelize.sync({ force: true }).then(function () {
-    console.log("DB connected!");
-    app.listen(PORT, function () {
-        console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
-    });
+// If running a test, set syncOptions.force to true
+// clearing the `testdb`
+if (process.env.NODE_ENV === "test") {
+  syncOptions.force = true;
+}
+
+// Starting the server, syncing our models ------------------------------------/
+db.sequelize.sync(syncOptions).then(function() {
+  console.log("DB Fired!");
+  app.listen(PORT, function() {
+    console.log(
+      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
+      PORT,
+      PORT
+    );
+  });
 });
 
 module.exports = app;
