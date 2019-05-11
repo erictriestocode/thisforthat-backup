@@ -4,6 +4,7 @@ import "./style-home.css";
 
 class Home extends Component {
     render() {
+        console.log("home props:", this.props);
     return (
         <div>
                 <div class="container">
