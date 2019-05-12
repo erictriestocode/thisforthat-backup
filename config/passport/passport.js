@@ -18,6 +18,8 @@ passport.use(new LocalStrategy({ usernameField: "email" },
         return done(null, false, { message: "Wrong password." });
       }
       // If email exists and has matching password, return dbUser
+      // console.log(dbUser);
+      console.log("inside passport.js line 22");
       return done(null, dbUser);
     });
   }
