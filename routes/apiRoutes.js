@@ -58,10 +58,10 @@ module.exports = function (app) {
     // Sequelize queries are asynchronous, which helps with perceived speed.
     // If we want something to be guaranteed to happen after the query, we'll use
     // the .then function
-    console.log("hitting the findall API route!: " , res);
+    //console.log("hitting the findall API route!: " , res);
     // console.log(res);
     db.Transaction.findAll({}).then(function(results) {
-      console.log("this are the users: ", results);
+     // console.log("this are the users: ", results);
       // results are available to us inside the .then
       res.json(results);
     });

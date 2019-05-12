@@ -3,6 +3,7 @@ var express = require("express");
 var passport = require('passport');
 var session = require('express-session');
 var bodyParser = require('body-parser');
+var path = require('path');
 
 // ****** PASSPORT CONFIG ******************
 var passport = require("./config/passport/passport");

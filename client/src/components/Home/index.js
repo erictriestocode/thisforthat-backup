@@ -19,31 +19,32 @@ class Home extends Component {
         UserId: ''
     }
 
+    componentDidMount() {
+        this. Usertransction();
+      }
 
-    Usertrnsction = evt => {
-        
-        evt.preventDefault();
-        // functionToPushDataIntoDB(this.state)
-        console.log(this.state);
-        const { id, Transaction_Desc, Tokens_Transaction_amount, User_Name_requesting_service, User_Name_Providing_service,
-            TotalTokensBalance, created_at, createdAt, updatedAt, UserId} = this.state;
-        axios.get('http://localhost:5000/api/findalltransUser', {
-            id,
-            Transaction_Desc,
-            Tokens_Transaction_amount, 
-            User_Name_requesting_service,
-            User_Name_Providing_service,
-            TotalTokensBalance,
-            created_at,
-            createdAt,
-            updatedAt,	 
-            UserId
-              })
+    //   loadtransaction = () => {
+    //     this.Usertransction()
+    //       .then(res =>
+    //         // this.setState({ books: res.data, title: "", author: "", synopsis: "" })
+    //          console.log("home res: ", res)
+    //       )
+    //       .catch(err => console.log(err));
+    //   };
+      
+      Usertransction = () => {
+       return axios.get('http://localhost:5000/api/findalltransUser')
+       .then( res=>
+        console.log("Home Usertrnas: ", res)
+        );
+       
+
         };
 
 
+
     render() {
-        console.log("home props:", this.props);
+       // console.log("home props:", this.props);
     return (
         <div>
                 <div className="container">
