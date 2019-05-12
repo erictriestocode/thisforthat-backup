@@ -1,6 +1,6 @@
 {
   "development": {
-    "username": "eric",
+    "username": "root",
     "password": "password",
     "database": "timefortime_db",
     "host": "localhost",
