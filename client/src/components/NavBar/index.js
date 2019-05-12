@@ -1,8 +1,10 @@
+
 //set imports
 import React, { Component } from "react";
 import "./style.css";
 import M from "materialize-css/dist/js/materialize.min.js";
 import "materialize-css/dist/css/materialize.min.css";
+
 
 class Navbar extends Component {
   componentDidMount() {

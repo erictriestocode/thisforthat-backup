@@ -4,6 +4,7 @@ import "./style-profile.css";
 
 class Profile extends Component {
     render() {
+
         return (
             <div>
                 < section id="main-sections" >
@@ -56,6 +57,9 @@ class Profile extends Component {
     }
 }
 
+
+
 export default Profile
+
 
 
