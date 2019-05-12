@@ -14,12 +14,12 @@
   height: 1%;
 
 }
-.wrapper {
+.wrapper-Summary {
     /* Box-model */
-    width: 900px;
+    width: 1024px;
   
     /* Positioning */
-    margin: 40px auto;
+    margin: 0px auto;
   }
   /* #main-content, */
   #sidebar {
@@ -28,12 +28,38 @@
     /* padding: 30px; */
     float: right;
   }
+h1{
+  font-size: 20px;
+  outline-color: black;
   
+
+}  
+
   #main-content {
     /* Positioning */
     float: left;
-    width: 20px;
+    width: 250px;
     margin-right: 40px auto;
+    margin-left: 40px;
+    margin-top: 20px;
+    background-color:grey;
+    border: 5px;
+    border-color: black;
+    text-align: center;
+    /* Visual */
+    /* background: #fff; */
+  }
+  #main-sections {
+    /* Positioning */
+    float: left;
+    width: 250px;
+    margin-right: 40px auto;
+    margin-left: 40px;
+    margin-top: 20px;
+    background-color:white;
+    border: 5px;
+    border-color: black;
+    text-align: center;
     /* Visual */
     /* background: #fff; */
   }
@@ -74,10 +100,9 @@ nav .brand-logo {
   overflow: auto;
 }
 
-
-////
 .timeline {
   position: relative;
+  margin-top: 2%;
 }
 
 .timeline .timeline-event {
