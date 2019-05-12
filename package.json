@@ -4,10 +4,13 @@
   "description": "Project 2 Starter",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
   },
   "license": "ISC",
   "dependencies": {
@@ -27,12 +30,15 @@
   "directories": {
     "test": "test"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "concurrently":"4.1.0",
+    "nodemon": "^1.19.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/erictriestocode/Project-3"
   },
-  "author": "",
+  "author": "Thisforthat Team",
   "bugs": {
     "url": "https://github.com/erictriestocode/Project-3"
   },
