@@ -1,6 +1,3 @@
-body {
-    background-image: url('../../assets/background.png');
-}
 
 .orange-text {
     color: #ff9800 !important;
@@ -25,9 +22,28 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    height: 100px;
+    width: 100px;
 }
 
 .responsive {
-    width: 25%;
+    margin-top: 1%;
+    width: 10%;
     height: auto;
 }
+.light{
+    text-align: center;
+}
+
+
+.record-container{
+    position: relative;
+    padding-bottom: 5%;
+
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
