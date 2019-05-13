@@ -20,10 +20,9 @@ class App extends Component {
   render() {
     return (
       <div>
-
         <BrowserRouter>
-          <Navbar />
           {/* <Carousel /> */}
+         <Navbar/>
           <Switch>
             <Route exact path="/" component={LandingPage} />
             <Route path="/signinform" component={SigninForm} />
