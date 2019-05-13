@@ -30,7 +30,7 @@ class Transaction extends Component {
                     </div>
                  </div>
 
-                 <div class="container">
+                 <div class="transaction-container">
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2">
                             <h2>Testing</h2>
