@@ -24,7 +24,7 @@ class Registration extends Component {
     handleSubmit = evt => {
         evt.preventDefault();
         // functionToPushDataIntoDB(this.state)
-        console.log(this.state);
+        // console.log(this.state);
     }
 
 
@@ -38,33 +38,34 @@ class Registration extends Component {
                 registerError: true,
             });
         } else {
-            axios
-                //HERE WE POST TO THE BACKEND ROUTES
-                .post('http://localhost:5000/api/register', {
-                    email,
-                    username,
-                    password
-                })
-                .then(response => {
-                    //   console.log("response:", response);
-                    //   this.setState({
-                    //     messageFromServer: response.status,
-                    //     showError: false,
-                    //     loginError: false,
-                    //     registerError: false,
-                    //   });
-                    if (response.status === 201) {
-                        this.props.history.push('/signinform');
-                    }
-                })
-                .catch(error => {
-                    console.log(error);
-                    //   console.log(error.response);
-                    //   if (error.response.data === 'username or email already taken') {
-                    //     this.setState({
-                    //       showError: true,
-                    //       loginError: true,
-                    //       registerError: false,
+
+          axios
+          //HERE WE POST TO THE BACKEND ROUTES
+            .post('http://localhost:5000/api/register', {
+              email,
+              username,
+              password
+            })
+            .then(response => {
+            //   console.log("response:", response);
+            //   this.setState({
+            //     messageFromServer: response.status,
+            //     showError: false,
+            //     loginError: false,
+            //     registerError: false,
+            //   });
+            if(response.status === 201){
+              this.props.history.push('/signinform');
+            } 
+            })
+            .catch(error => {
+            //   console.log(error);
+            //   console.log(error.response);
+            //   if (error.response.data === 'username or email already taken') {
+            //     this.setState({
+            //       showError: true,
+            //       loginError: true,
+            //       registerError: false,
                 });
 
             //}

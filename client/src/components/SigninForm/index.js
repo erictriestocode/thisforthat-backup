@@ -17,7 +17,7 @@ class SigninForm extends Component {
     handleSubmit = evt => {
         evt.preventDefault();
         // functionToPushDataIntoDB(this.state)
-        console.log(this.state);
+       // console.log(this.state);
         const {email,password} = this.state;
             axios
             //HERE WE POST TO THE BACKEND ROUTES
@@ -33,14 +33,14 @@ class SigninForm extends Component {
               //     loginError: false,
               //     registerError: false,
               //   });
-              console.log(response);
+              //console.log(response);
               if(response.status === 200){
                 this.props.history.push('/home');
               } 
               })
               .catch(error => {
-                console.log(error);
-                console.log(error.response);
+                // console.log(error);
+                // console.log(error.response);
               //   if (error.response.data === 'username or email already taken') {
               //     this.setState({
               //       showError: true,
