@@ -1,10 +1,13 @@
 // import React from 'react';
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
 // import logo from './logo.svg';
 import './App.css';
-// Import Components
+
+// Import Components---------------------------------------
 import Navbar from "./components/NavBar";
+// import Carousel from "./components/Carousel";
 import Home from './components/Home';
 import SigninForm from './components/SigninForm';
 import LandingPage from "./components/landingPage";
@@ -17,9 +20,9 @@ class App extends Component {
   render() {
     return (
       <div>
-
         <BrowserRouter>
-          <Navbar />
+          {/* <Carousel /> */}
+         <Navbar/>
           <Switch>
             <Route exact path="/" component={LandingPage} />
             <Route path="/signinform" component={SigninForm} />
