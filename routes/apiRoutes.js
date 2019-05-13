@@ -19,7 +19,16 @@ module.exports = function (app) {
       res.json(err);
     });
   });
-
+  app.post("/api/sendTransRequest", function (req, res) {
+    console.log(req.body);
+    db.Transaction.create(req.body).then(function (Transaction) {
+      // res.redirect(307, "/api/login");
+      res.status(201).json(Transaction);
+    }).catch(function (err) {
+      console.log(err);
+      res.json(err);
+    });
+  });
   // if login successful redirect to home 
   app.post("/api/login", passport.authenticate("local"), function (req, res) {
     // since the API call is doing post we set this /api/login call to redirect to the HOME page
@@ -58,10 +67,10 @@ module.exports = function (app) {
     // Sequelize queries are asynchronous, which helps with perceived speed.
     // If we want something to be guaranteed to happen after the query, we'll use
     // the .then function
-    console.log("hitting the findall API route!: " , res);
+    //console.log("hitting the findall API route!: " , res);
     // console.log(res);
     db.Transaction.findAll({}).then(function(results) {
-      console.log("this are the users: ", results);
+     // console.log("this are the users: ", results);
       // results are available to us inside the .then
       res.json(results);
     });

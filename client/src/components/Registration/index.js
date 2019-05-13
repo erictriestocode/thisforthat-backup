@@ -24,7 +24,7 @@ class Registration extends Component {
     handleSubmit = evt => {
         evt.preventDefault();
         // functionToPushDataIntoDB(this.state)
-        console.log(this.state);
+        // console.log(this.state);
     }
 
 
@@ -58,7 +58,7 @@ class Registration extends Component {
             } 
             })
             .catch(error => {
-              console.log(error);
+            //   console.log(error);
             //   console.log(error.response);
             //   if (error.response.data === 'username or email already taken') {
             //     this.setState({
