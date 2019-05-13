@@ -32,7 +32,7 @@
     "test": "test"
   },
   "devDependencies": {
-    "concurrently":"4.1.0",
+    "concurrently": "4.1.0",
     "nodemon": "^1.19.0"
   },
   "repository": {
