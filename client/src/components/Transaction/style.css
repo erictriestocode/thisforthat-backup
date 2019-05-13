@@ -1,0 +1,13 @@
+.form-container {
+    border-color: #0D47A1;
+    margin: 25px;
+}
+
+.cool-font {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 20px;
+}
+
+.transaction-container {
+    margin: 25px;
+}
