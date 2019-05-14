@@ -3,13 +3,8 @@ import axios from 'axios';
 import { createBrowserHistory } from 'history';
 import "./style.css";
 
-
-
-
 class Transaction extends Component {
 
-
-    
     state = {
         Transaction_Desc: '',
         Tokens_Transaction_amount: '', 
@@ -18,20 +13,20 @@ class Transaction extends Component {
         //TotalTokensBalance: '',
         UserId: '',
         showError: '',
-        loginError: '',
-        registerError: ''
+        // loginError: '',
+        // registerError: ''
     }
 
     handleTextChange = evt => {
         const { name, value } = evt.target
         this.setState({ [name]: value })
     }
+    
     handleSubmit = evt => {
         evt.preventDefault();
         // functionToPushDataIntoDB(this.state)
         // console.log(this.state);
     }
-   
 
     componentDidMount() {
         this. UserRequesting();
@@ -81,9 +76,6 @@ class Transaction extends Component {
     //      )};
 
 // handle/grab information from trnasaction page
-        
-
-
 
         transactionReq = e => {
             console.log("here");
@@ -148,6 +140,7 @@ class Transaction extends Component {
         return (
             <div>
             <div className="form-container">
+            <form id="TransactionForm" onSubmit={this.transactionReq}>
                 <div className="row">
                     <div className="col-sm-8 col-sm-offset-2">
                         <p className="cool-font">Transaction</p>
@@ -186,8 +179,10 @@ class Transaction extends Component {
 
                         <button id="transreques-submit" className="btn btn-lg pull-right" href="profile.html">Submit!</button>
                     </div>
-                </div>
+                    </div>
+                </form> 
              </div>
+
              <div className="container">
                 <div className="row">
                     <div className="col-sm-8 col-sm-offset-2">
