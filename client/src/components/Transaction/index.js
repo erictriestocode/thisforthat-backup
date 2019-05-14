@@ -95,7 +95,8 @@ class Transaction extends Component {
                     loginError: false,
                     registerError: true,
                 });
-            } else{              axios.post('http://localhost:5000/api/sendTransRequest', {
+            } else{
+                axios.post('http://localhost:5000/api/sendTransRequest', {
                 Transaction_Desc,
                 Tokens_Transaction_amount, 
                 User_Name_requesting_service,
