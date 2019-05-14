@@ -6,22 +6,43 @@ class Profile extends Component {
     render() {
         return (
             <div>
-                < section id="main-sections" >
-                    <div className="row" id ="main-content">
-                        <container>
-                            <h1>Total amount of outstanding requested time from others: </h1>
-                            <p>VARIABLE </p>
-                        </container>
+                {/* < section id="main-sections" >
+                    <div class="hide-on-med-and-down">
+                        <div class="col s12 m7">
+                            <div class="card horizontal" id="requested">
+                                <div class="card-image">
+                                    <img src="https://github.com/ShelbyMarks/thisforthatlogo/blob/master/logo-2-min.jpg?raw=true"></img>
+                                </div>
+                                <div class="card-content1">
+                                    <br></br>
+                                    <h3>##</h3>
+                                </div>
+                            </div>
+                            <div class="card horizontal">
+                                <div class="card-image">
+                                    <img src="https://github.com/ShelbyMarks/thisforthatlogo/blob/master/logo-2-min.jpg?raw=true"></img>
+                                </div>
+                                <div class="card-content2">
+                                    <br></br>
+                                    <h3>##</h3>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <br></br>
-                    <div className="row" id ="main-content">
-                        <container>
-                            <h1>Total amount of outstanding payed time to others: </h1>
-                            <p>VARIABLE </p>
-                        </container>
+                </section> */}
+                <div class="hide-on-med-and-down">
+                    <div id="top">
+                        <div class="card-panel grey lighten-2">
+                            <span class="blue-text text-darken-4" id="appName">
+                                <h1>Total Amount of Others' Time:</h1>
+                            </span>
+                            <span class="blue-text text-darken-4">
+                                <p class="create-account"> NEED VARIABLE HERE </p>
+                            </span>
+                        </div>
                     </div>
-                </section >
-                <div className="container" >
+                </div>
+                <div className="container">
                     <div className="timeline">
                         <div className="timeline-event">
                             <div className="card timeline-content">
@@ -51,11 +72,10 @@ class Profile extends Component {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div >
+
         )
     }
 }
 
 export default Profile
-
-

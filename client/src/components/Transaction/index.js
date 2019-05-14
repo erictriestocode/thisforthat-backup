@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-//import "./style.css";
+
+import "./style.css";
+
+
 
 
 class Transaction extends Component {
+
 
     
     state = {
@@ -45,6 +49,7 @@ class Transaction extends Component {
                     // console.log("Transaction page data : ", res.data.email);
                     // console.log("Transaction page data : ", res.data.id)
                 }
+
 
                 console.log("user receiving id : ", userId);
             };
@@ -89,6 +94,7 @@ class Transaction extends Component {
                             <div id="test-area"></div>
                     </div>
                 </div>
+
             </div>
         </div>
         );
