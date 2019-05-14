@@ -28,8 +28,9 @@
     float: right;
   }
 h1{
-  font-size: 20px;
+  font-size: 27px;
   outline-color: black;
+  color: #0D47A1;
   
 }  
 
@@ -244,3 +245,12 @@ nav .brand-logo {
   margin-left:20%;
 }
 
+.card-panel.grey.lighten-2 {
+  height: 150px;
+  margin-top: -2%;
+}
+
+.top{
+height:100px;
+
+}
