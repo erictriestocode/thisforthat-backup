@@ -1,7 +1,7 @@
 {
   "name": "thisforthat",
   "version": "2.0.0",
-  "description": "Project 2 Starter",
+  "description": "Project 3 Starter",
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -35,14 +35,5 @@
   "devDependencies": {
     "concurrently": "4.1.0",
     "nodemon": "^1.19.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/erictriestocode/Project-3"
-  },
-  "author": "Thisforthat Team",
-  "bugs": {
-    "url": "https://github.com/erictriestocode/Project-3"
-  },
-  "homepage": "https://github.com/erictriestocode/Project-3"
+  }
 }
