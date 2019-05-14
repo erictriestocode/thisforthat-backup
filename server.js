@@ -49,7 +49,7 @@ var syncOptions = { force: false };
 // Routes
 require("./routes/apiRoutes")(app);
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, 'client/build', "./client/public/index.html"));
+  res.sendFile(path.join(__dirname, "./client/public/index.html"));
 });
 
 // Starting the server, syncing our models ------------------------------------/
