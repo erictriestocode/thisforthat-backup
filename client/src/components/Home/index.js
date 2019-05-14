@@ -23,15 +23,7 @@ class Home extends Component {
         this. Usertransction();
       }
 
-    //   loadtransaction = () => {
-    //     this.Usertransction()
-    //       .then(res =>
-    //         // this.setState({ books: res.data, title: "", author: "", synopsis: "" })
-    //          console.log("home res: ", res)
-    //       )
-    //       .catch(err => console.log(err));
-    //   };
-      
+
       Usertransction = () => {
        return axios.get('http://localhost:5000/api/findalltransUser')
        .then( res=>
