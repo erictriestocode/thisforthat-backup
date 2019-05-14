@@ -6,7 +6,7 @@ class Profile extends Component {
     render() {
         return (
             <div>
-                < section id="main-sections" >
+                {/* < section id="main-sections" >
                     <div class="hide-on-med-and-down">
                         <div class="col s12 m7">
                             <div class="card horizontal" id="requested">
@@ -29,8 +29,19 @@ class Profile extends Component {
                             </div>
                         </div>
                     </div>
-                </section>
-
+                </section> */}
+                <div class="hide-on-med-and-down">
+                    <div id="top">
+                        <div class="card-panel grey lighten-2">
+                            <span class="blue-text text-darken-4" id="appName">
+                                <h1>Total Amount of Others' Time:</h1>
+                            </span>
+                            <span class="blue-text text-darken-4">
+                                <p class="create-account"> NEED VARIABLE HERE </p>
+                            </span>
+                        </div>
+                    </div>
+                </div>
                 <div className="container">
                     <div className="timeline">
                         <div className="timeline-event">
