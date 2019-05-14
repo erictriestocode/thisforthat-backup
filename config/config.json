@@ -1,17 +1,17 @@
 {
   "development": {
-    "username": "root",
-    "password": "Milo81rico**",
+    "username": "eric",
+    "password": "password",
     "database": "timefortime_db",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
-    "password": "Milo81rico**",
-    "database": "testdb",
-    "host": "localhost",
-    "dialect": "mysql",
+    "username": "NULL",
+    "password": "NULL**",
+    "database": "NULL",
+    "host": "NULL",
+    "dialect": "NULL",
     "logging": false
   },
   "production": {
