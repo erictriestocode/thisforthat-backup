@@ -2,12 +2,16 @@
 .orange-text {
     color: #ff9800 !important;
     font-family: lobster;
+    text-shadow: 1px 1px #fe4902, 2px 2px #fe4902, 3px 3px #fe4902;
+    /* -webkit-transition: all 0.12s ease-out; */
 }
-
+h1.header.center.orange-text{
+    line-height: 5%;
+}
 .container {
     margin: 0 auto;
     max-width: 1280px;
-    background: white;
+    background: whitesmoke;
     opacity: .9;
     width: 90%;
 }
@@ -43,14 +47,25 @@
   }
 
   .row{
-      margin-bottom:10px;
-      margin-top:100px;
+      margin-bottom:-50px;
+      /* margin-top:70px; */
       align-self: center;
+
   }
+  .row.center{
+    margin-top:40px;
+    align-self: center;
+
+}
+
+/* .row .col.m6 {
+width:50px;
+} */
   .image {
     position: relative;
-    width: 120px;
-    height: 120px;
+    margin: 2%;
+    width: 150px;
+    height: 150px;
     -webkit-animation:spin 4s linear infinite;
     -moz-animation:spin 4s linear infinite;
     animation:spin 4s linear infinite;
