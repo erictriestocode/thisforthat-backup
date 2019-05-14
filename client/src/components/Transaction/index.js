@@ -1,120 +1,100 @@
 import React, { Component } from 'react';
-import history from '../../history'
 import axios from 'axios';
+
 import "./style.css";
+
+
 
 
 class Transaction extends Component {
 
-        // state = {
-        //     id: '',
-        //    Transaction_Desc: '',
-        //    Tokens_Transaction_amount: '',
-        //    User_Name_requesting_service: '',
-        //    User_Name_Providing_service: '',
-        //    TotalTokensBalance: '',
-        //    created_at: '',
-        //    createdAt: '',
-        //    updatedAt: '',
-        //    UserId
 
-        // }
     
-        // handleTextChange = evt => {
-        //     const { name, value } = evt.target
-        //     this.setState({ [name]: value })
-        // }
-    
-        // handleSubmit = evt => {
-        //     evt.preventDefault();
-        //     // functionToPushDataIntoDB(this.state)
-        //     // console.log(this.state);
-        // }
-    
-    
-        // registerUser = e => {
-        //     e.preventDefault();
-        //     // const {  id, Transaction_Desc, Tokens_Transaction_amount, User_Name_requesting_service, User_Name_Providing_service,
-        //     //     TotalTokensBalance, created_at, createdAt, updatedAt, UserId} = this.state;
-        //     // if (username === '' || password === '' || email === '') {
-        //     //   this.setState({
-        //     //     showError: true,
-        //     //     loginError: false,
-        //     //     registerError: true,
-        //     //   });
-        //     // } 
-        //    //  {
-        //       axios
-        //       //HERE WE POST TO THE BACKEND ROUTES
-        //         .post('http://localhost:5000/api/sendTransRequest', {
-        //             id, Transaction_Desc, Tokens_Transaction_amount, User_Name_requesting_service, User_Name_Providing_service,
-        //             TotalTokensBalance, created_at, createdAt, updatedAt, UserId
-        //         })
-        //         .then(response => {
-        //         //   console.log("response:", response);
-        //         //   this.setState({
-        //         //     messageFromServer: response.status,
-        //         //     showError: false,
-        //         //     loginError: false,
-        //         //     registerError: false,
-        //         //   });
-        //         if(response.status === 201){
-        //           this.props.history.push('/Home');
-        //         } 
-        //         })
-        //         .catch(error => {
-        //         //   console.log(error);
-        //         //   console.log(error.response);
-        //         //   if (error.response.data === 'username or email already taken') {
-        //         //     this.setState({
-        //         //       showError: true,
-        //         //       loginError: true,
-        //         //       registerError: false,
-        //             });
-                    
-        //           //}
-        //         //});
-        //     }
-        //   ;
-    
+    state = {
+        id: '',
+        Transaction_Desc: '',
+        Tokens_Transaction_amount: '', 
+        User_Name_requesting_service: '',
+        User_Name_Providing_service: '',
+        TotalTokensBalance: '',
+        created_at: '',
+        createdAt: '',
+        updatedAt: '',	 
+        UserId: ''
+    }
 
+    componentDidMount() {
+        this. UserRequesting();
+        this.UserIdRec();
+      }
+
+   //user name requesting transaction
+    UserRequesting = () => {
+        return axios.get('http://localhost:5000/api/findalltransUser')
+        .then( res=>
+         console.log("username sending : ", res.data[0].User_Name_requesting_service)
+         ); 
+         };
+
+      //user ID receiving transaction
+    UserIdRec = () => {
+        return axios.get('http://localhost:5000/api/findalluser')
+        .then( res=>{
+            console.log("This is the userid res:", res);
+            for (var i=0;i<res.data.length; i++){
+                if(res.data[i].user="st"){
+                var userId= res.data[i].id
+                
+                    // console.log("Transaction page data : ", res.data.username);
+                    // console.log("Transaction page data : ", res.data.email);
+                    // console.log("Transaction page data : ", res.data.id)
+                }
+
+
+                console.log("user receiving id : ", userId);
+            };
+        }
+         
+         ); 
+         };
 
 
 
     render(){
         return (
             <div>
-            <div class="form-container">
-                <div class="row">
-                    <div class="col-sm-8 col-sm-offset-2">
-                        <p class="cool-font">Transaction</p>
-                        <input class="form-control" type="text" id="Transaction_Desc" placeholder="Write a description for your trasnaction"></input>
+            <div className="form-container">
+                <div className="row">
+                    <div className="col-sm-8 col-sm-offset-2">
+                        <p className="cool-font">Transaction</p>
+                        <input className="form-control" type="text" id="Transaction_Desc" placeholder="Write a description for your trasnaction"></input>
                         <br />
-                        <p class="cool-font">Tokens (Each Token equals 15 Minutes)</p>
-                        <input class="form-control" rows="3" id="Tokens_Transaction_amount" placeholder="Transaction amount"></input>
+                        <p className="cool-font">Tokens (Each Token equals 15 Minutes)</p>
+                        <input className="form-control" rows="3" id="Tokens_Transaction_amount" placeholder="Transaction amount"></input>
                         <br />
-                        {/* <p class="cool-font">Request time from...</p>
-                        <input class="form-control" rows="3" id="User_Name_requesting_service" placeholder="Username of the user you are requesting from"></input> */}
+                        {/* <p className="cool-font">Request time from...</p>
+                        <input className="form-control" rows="3" id="User_Name_requesting_service" placeholder="Username of the user you are requesting from"></input> */}
 
                         <br />
-                        <p class="cool-font">Send time to...</p>
-                        <input class="form-control" rows="3" id="User_Name_Providing_service" placeholder="Username of the user you want to send time to"></input>
+                        <p className="cool-font">Send time to...</p>
+                        <input className="form-control" rows="3" id="User_Name_Providing_service" placeholder="Username of the user you want to send time to"></input>
                         <br />
-                        {/* <p class="cool-font">AailableTokensBalance</p>
-                        <input class="form-control" rows="3" id="TotalTokensBalance" placeholder="Total Tokens Balance"></input> */}
+                        {/* <p className="cool-font">AailableTokensBalance</p>
+                        <input className="form-control" rows="3" id="TotalTokensBalance" placeholder="Total Tokens Balance"></input> */}
 
-                        <button id="transreques-submit" class="btn btn-lg pull-right" href="profile.html">Submit!</button>
+                        <button id="transreques-submit" className="btn btn-lg pull-right" href="profile.html">Submit!</button>
                     </div>
                 </div>
              </div>
-             <div class="container">
-                <div class="row">
-                    <div class="col-sm-8 col-sm-offset-2">
+             <div className="container">
+                <div className="row">
+                    <div className="col-sm-8 col-sm-offset-2">
                         <h2>Testing</h2>
                         <hr />
                             <div id="test-area"></div>
                     </div>
                 </div>
+
             </div>
         </div>
         );
