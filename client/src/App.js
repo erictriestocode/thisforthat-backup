@@ -11,6 +11,7 @@ import Navbar from "./components/NavBar";
 import Home from './components/Home';
 import SigninForm from './components/SigninForm';
 import LandingPage from "./components/landingPage";
+import Profile from "./components/Profile";
 import Help from './components/Help';
 import Registration from './components/Registration';
 import Transaction from './components/Transaction';
@@ -30,7 +31,7 @@ class App extends Component {
             <Route path="/help" component={Help} />
             <Route path="/registration" component={Registration} />
             <Route path="/transaction" component={Transaction} />
-            {/* <Route path="/profile" component={Profile} /> */}
+            <Route path="/profile" component={Profile} />
           </Switch>
         </BrowserRouter>
       </div>
