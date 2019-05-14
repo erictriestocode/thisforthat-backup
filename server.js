@@ -43,9 +43,9 @@ app.use(express.static(__dirname + "/public/"));
 var syncOptions = { force: false };
 
 // HEROKU
-if (process.env.NODE_ENV === ' production'){
-  app.use(express.static('client/build'));
-}
+// if (process.env.NODE_ENV === ' production'){
+//   app.use(express.static('client/build'));
+// }
 // Routes
 require("./routes/apiRoutes")(app);
 app.get("*", (req, res) => {
