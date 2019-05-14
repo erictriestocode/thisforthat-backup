@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import "./style-home.css";
 import axios from 'axios';
 import moment from 'moment';
@@ -31,6 +32,10 @@ class Home extends Component {
     return (
         <div>
                 <div className="container">
+                    <Link to='/transaction'>
+                            <a href="/transaction" id="addbutton" className="btn-floating btn-large waves-effect waves-light blue"><i class="material-icons">add</i></a>
+                    </Link>
+                    
                     <div className="timeline">
                     {/* "re-render" because we want new info to show  */}
                         {this.state.data.map(item => {
