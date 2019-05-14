@@ -1,10 +1,8 @@
 
 import React, { Component } from 'react';
-import history from '../../history'
+import { createBrowserHistory } from 'history';
 import axios from 'axios';
 import "./style.css";
-
-
 
 class Registration extends Component {
     state = {
@@ -27,8 +25,8 @@ class Registration extends Component {
         // console.log(this.state);
     }
 
-
     registerUser = e => {
+        console.log("here");
         e.preventDefault();
         const { username, password, email } = this.state;
         if (username === '' || password === '' || email === '') {
@@ -38,7 +36,6 @@ class Registration extends Component {
                 registerError: true,
             });
         } else {
-
           axios
           //HERE WE POST TO THE BACKEND ROUTES
             .post('http://localhost:5000/api/register', {
@@ -58,8 +55,8 @@ class Registration extends Component {
               this.props.history.push('/signinform');
             } 
             })
-            .catch(error => {
-            //   console.log(error);
+            .catch(err => {
+              console.log(err);
             //   console.log(error.response);
             //   if (error.response.data === 'username or email already taken') {
             //     this.setState({
@@ -74,25 +71,24 @@ class Registration extends Component {
     };
 
 
-
     render() {
         return (
             <div>
                 {/* <center> */}
-                <div class="card-panel white light-2">
+                <div className="card-panel white light-2">
                     <div id="top">
-                        <div class="card-panel blue darken-4">
-                            <span class="grey-text text-lighten-2" id="appName">
+                        <div className="card-panel blue darken-4">
+                            <span className="grey-text text-lighten-2" id="appName">
                                 <h1>Register</h1>
                             </span>
-                            <span class="grey-text text-lighten-2">
-                                <p class="create-account"> Please fill in this form to create an account. </p>
+                            <span className="grey-text text-lighten-2">
+                                <p className="create-account"> Please fill in this form to create an account. </p>
                             </span>
                         </div>
                     </div>
 
-             <div class="container signin">
-                        <p><a href="/Login">Already have an account? Login</a></p>
+             <div className="container signin">
+                        <p><a href="/signinform">Already have an account? Login</a></p>
                     <form
                         id="RecruitForm"
                         onSubmit={this.registerUser}
@@ -127,9 +123,8 @@ class Registration extends Component {
                         />
                         <br />
                         {/* <input type="submit" value="Register" className="btn-large waves-effect waves-light green" /> */}
-                    </form>
 
-                    <div class="container termsConditions">
+                    <div className="container termsConditions">
                     <p>The content and functionality of this website is designed for law-abiding citizens with the intent to
                 simplify and quantify law-abiding activities.</p>
                     <p>ThisforThat does not condone the use of its’ proprietary app for transactions based in coercion or
@@ -141,15 +136,15 @@ class Registration extends Component {
                     <p></p>
                     <p></p>
                     </div> 
-
-                    <div class="container signin">
+                    <div className="container buttons">
                     <input type="submit" value="Register" className="btn-large waves-effect waves-light green" />
+                    
                     <br></br>
                     <br></br>
-
                     <a href="https://www.stopbullying.gov/" id="button" className="btn-large waves-effect waves-light red">I prefer to stay a bully</a>
                         <p></p>
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>
