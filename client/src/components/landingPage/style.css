@@ -5,9 +5,15 @@
     text-shadow: 1px 1px #fe4902, 2px 2px #fe4902, 3px 3px #fe4902;
     /* -webkit-transition: all 0.12s ease-out; */
 }
-h1.header.center.orange-text{
-    line-height: 5%;
+
+.btn-large {
+    height: 54px;
+    line-height: 54px;
+    font-size: 15px;
+    padding: 0 50px;
+    margin: 6px;
 }
+
 .container {
     margin: 0 auto;
     max-width: 1280px;
@@ -20,6 +26,7 @@ h1.header.center.orange-text{
     padding: 0 15px;
     background: white;
     opacity: .9;
+    box-shadow: 5px 5px 5px grey;
 }
 
 .img-center {
