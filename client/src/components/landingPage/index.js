@@ -22,18 +22,21 @@ class LandingPage extends Component {
                 {/* rotating end*/}
 
                 <h1 className="header center orange-text">...Time is your commodity </h1>
+        
+
+
+             <div className="container">
                 <div className="row center">
-                    <div className="col s4 m6">
+                    <div className="col s4 m12">
                         <Link to='/registration'>
                             <a href="/registration" id="button" className="btn-large waves-effect waves-light orange">Register</a>
                         </Link>
-                    </div>
-                    <div className="col s4 m6">
                         <Link to='/signinform'>
                             <a href="/signinform" id="button" className="btn-large waves-effect waves-light blue">Sign In</a>
                         </Link>
                     </div>
                 </div>
+            </div>
                 <div className="row">
                     <div className="col s12 m4">
                         <div className="icon-block">
