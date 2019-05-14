@@ -7,29 +7,32 @@ class LandingPage extends Component {
     render() {
         return (
             <div>
-                <div className="container">
-                    <div id="top">
-                        {/* rotating start */}
-                        <div className="row center">
-                            <img class="image" src="https://github.com/ShelbyMarks/thisforthatlogo/blob/master/logo-2-min.jpg?raw=true" alt="" width="120" height="200"></img>
-                        </div>
-                        <br></br>
-                        <br></br>
-                        {/* rotating end*/}
-                        <div>
-                        </div>
-                        <h1 className="header center orange-text">...Time is your commodity </h1>
-                    </div>
+
+                {/* <div className="container"> */}
+
+                {/* rotating start */}
+                <div class="hide-on-small-only">
                     <div className="row center">
-                        <h5 className="header col s12 light">A fun timekeeping app enabling users to digitally send / guarantee their
-            time. Users can trade their time as a commodity.</h5>
+                        <img class="image" src="https://github.com/ShelbyMarks/thisforthatlogo/blob/master/logo-2-min.jpg?raw=true" alt=""></img>
+                        {/* <img class="image" src="https://github.com/ShelbyMarks/thisforthatlogo/blob/master/logo-2-min.jpg?raw=true" alt="" width="120" height="200"></img>
+                                    <img class="image" src="https://github.com/ShelbyMarks/thisforthatlogo/blob/master/logo-2-min.jpg?raw=true" alt="" width="120" height="200"></img> */}
                     </div>
-                    <div className="row center">
+                </div>
+                <br></br>
+                {/* rotating end*/}
+
+                <h1 className="header center orange-text">...Time is your commodity </h1>
+                <div className="row center">
+                    <div className="col s4 m6">
                         <Link to='/registration'>
-                            <a href="/registration" id="button" className="btn-large waves-effect waves-light orange">Let's Get Started</a>
+                            <a href="/registration" id="button" className="btn-large waves-effect waves-light orange">Register</a>
                         </Link>
                     </div>
-                    <br /><br />
+                    <div className="col s4 m6">
+                        <Link to='/signinform'>
+                            <a href="/signinform" id="button" className="btn-large waves-effect waves-light blue">Sign In</a>
+                        </Link>
+                    </div>
                 </div>
                 <div className="row">
                     <div className="col s12 m4">
@@ -72,8 +75,16 @@ class LandingPage extends Component {
                     </div>
 
                 </div>
+                {/* <div className="row center">
+                        <h5 className="header col s12 light">A fun timekeeping app enabling users to digitally send / guarantee their
+            time. Users can trade their time as a commodity.</h5>
+                    </div> */}
 
-            </div >
+                <br /><br />
+            </div>
+
+
+            // </div >
         )
     }
 }
