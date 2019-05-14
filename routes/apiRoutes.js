@@ -62,7 +62,7 @@ module.exports = function (app) {
       res.json(results);
     });
   });
-  app.get("/api/findalltrans", function(req, res) {
+  app.get("/api/findalltran", function(req, res) {
     // Finding all Users, and then returning them to the user as JSON.
     // Sequelize queries are asynchronous, which helps with perceived speed.
     // If we want something to be guaranteed to happen after the query, we'll use
@@ -82,7 +82,7 @@ module.exports = function (app) {
     // // We set the value to an array of the models we want to include in a left outer join
     // // In this case, just db.Author
     // // const userID = res.req.user.dataValues.id;
-    // // console.log("firs usedrID:", userID );
+    // // console.lsog("firs usedrID:", userID );
     // //  console.log("this is the Userid fiortrasantion: ", userID);
 
     db.Transaction.findAll({
