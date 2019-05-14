@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import "./style.css";
-// import "./animate.js";
 
 
 class LandingPage extends Component {
@@ -9,15 +8,16 @@ class LandingPage extends Component {
         return (
             <div>
                 <div className="container">
-
-                {/* rotating shit */}
-                    <div className="row center">
-                        <img class="image" src="https://github.com/ShelbyMarks/thisforthatlogo/blob/master/logo-2-min.jpg?raw=true" alt="" width="120" height="200"></img>
-                    </div>
-                    <br></br>
-                    <br></br>
-                    {/* rotating shit end */}
-                    <div>
+                    <div id="top">
+                        {/* rotating start */}
+                        <div className="row center">
+                            <img class="image" src="https://github.com/ShelbyMarks/thisforthatlogo/blob/master/logo-2-min.jpg?raw=true" alt="" width="120" height="200"></img>
+                        </div>
+                        <br></br>
+                        <br></br>
+                        {/* rotating end*/}
+                        <div>
+                        </div>
                         <h1 className="header center orange-text">...Time is your commodity </h1>
                     </div>
                     <div className="row center">
@@ -73,7 +73,7 @@ class LandingPage extends Component {
 
                 </div>
 
-            </div>
+            </div >
         )
     }
 }
