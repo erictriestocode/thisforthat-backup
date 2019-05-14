@@ -15,7 +15,7 @@ class Profile extends Component {
 
 
       Usertransction = () => {
-        axios.get('http://localhost:5000/api/findalltransUser')
+        axios.get('/api/findalltransUser')
        .then( res=> {
         console.log("Home Usertrans: ", res)
         this.setState({data: res.data})
