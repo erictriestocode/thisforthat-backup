@@ -15,7 +15,7 @@ class Home extends Component {
 
 
       Usertransction = () => {
-        axios.get('http://localhost:5000/api/findalltransUser')
+        axios.get('http://localhost:5000/api/findalltran')
        .then( res=> {
         console.log("Home Usertrans: ", res)
         this.setState({data: res.data})
