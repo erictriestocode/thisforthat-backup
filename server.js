@@ -2,7 +2,9 @@ require("dotenv").config();
 var express = require("express");
 var passport = require('passport');
 var session = require('express-session');
+var passportConfig = require('./config/passport/passport');
 var bodyParser = require('body-parser');
+var http = require('http');
 var path = require('path');
 
 // ****** PASSPORT CONFIG ******************
@@ -16,7 +18,7 @@ var PORT = process.env.PORT || 5000;
 
 // ****** EXPRESS-SESSION & PASSPORT ******************
 // use sessions to keep track of user's login status
-app.use(session({ secret: "robot author", resave: true, saveUninitialized: true }));
+app.use(session({ secret: "wewillsaveallofyourtime!", resave: true, saveUninitialized: true })); //ENV variable in heroku
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(function(req, res, next) {
@@ -29,7 +31,7 @@ app.use(function(req, res, next) {
 // Middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(express.static(__dirname + "/public/html"));
+app.use(express.static(__dirname + "/public/"));
 
 // Routes
 require("./routes/apiRoutes")(app);
