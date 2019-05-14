@@ -3,6 +3,7 @@ var express = require("express");
 var passport = require('passport');
 var session = require('express-session');
 var passportConfig = require('./config/passport/passport');
+// var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var http = require('http');
 var path = require('path');
@@ -11,7 +12,9 @@ var path = require('path');
 var passport = require("./config/passport/passport");
 // ****** END PASSPORT CONFIG **************
 
+// **** DB MODELS ****
 var db = require("./models");
+// *******
 
 var app = express();
 var PORT = process.env.PORT || 5000;
@@ -30,24 +33,24 @@ app.use(function(req, res, next) {
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser());
+// app.use(cookieParser());
 app.use(express.json());
 app.use(express.static(__dirname + "/public/"));
 
-// Routes
-require("./routes/apiRoutes")(app);
-// require("./routes/htmlRoutes")(app); not needed
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/public/index.html"));
-});
 
 // if set to true the tables gets dropped and created
 var syncOptions = { force: false };
 
-// // If running a test, set syncOptions.force to true
-// // clearing the `testdb`
-// if (process.env.NODE_ENV === "test") {
-//   syncOptions.force = true;
-// }
+// HEROKU
+if (process.env.NODE_ENV === ' production'){
+  app.use(express.static('client/build'));
+}
+// Routes
+require("./routes/apiRoutes")(app);
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, 'client/build', "./client/public/index.html"));
+});
 
 // Starting the server, syncing our models ------------------------------------/
 db.sequelize.sync(syncOptions).then(function() {
