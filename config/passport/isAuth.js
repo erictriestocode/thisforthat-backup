@@ -6,13 +6,12 @@
 exports.IsAuthenticated = function (req, res, next) {
   // If user was logged in and serialized from passport.js, user can view the page
   if (req.user) {
+    console.log("Authenticated! Line 9 isauth.js");
     return next();
+  } else{
+    next(new Error(401));
   }
-
-  // Otherwise return visitor to home page or maybe login?
-  return res.redirect("/signinform");
 };
-
 
 exports.destroySession = function(req,res,next){
   req.logOut();
