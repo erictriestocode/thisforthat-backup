@@ -2,6 +2,7 @@ var db = require("../models");
 var passport = require("../config/passport/passport");
 var request = require('request'); // for AJAX calls
 var userAPi = require("../config/passport/passport"); 
+var Sequelize= require("sequelize");
 
 // **PASSPORT** middleware module
 var isAuth = require("../config/passport/isAuth");
@@ -85,10 +86,13 @@ module.exports = function (app) {
     // // console.lsog("firs usedrID:", userID );
     // //  console.log("this is the Userid fiortrasantion: ", userID);
 
-    db.Transaction.findAll({
-      where: {
-        UserId: userID
-       
+      const Op =Sequelize.Op;
+
+      db.Transaction.findAll({
+        where: {
+          
+            [Op.or]: [{UserId: userID}, {User_Name_Providing_service: userName}]
+         
       },
       // include: [db.Transaction]
     }).then(function(dbtransaction) {
