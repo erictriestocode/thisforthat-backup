@@ -1,25 +1,37 @@
 
-.form-container {
-  background: #3d5a80;
-  padding: 20px;
+
+.signin-container { 
+    padding: 47px;
+}
+
+form { 
+  background-color: white;
+  padding: 30px;
 }
 
 label {
-  color: whitesmoke;
+  /* color: whitesmoke;
   font-family: 'Roboto Condensed', sans-serif;
-  font-size: 19px;
+  font-size: 19px; */
+  font-size: 1.5rem;
+  color: black;
 }
+
 
 .form-signin input[type="email"] {
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
+  padding: .25rem .5rem;
+  border-radius: .2rem;
 }
 
 .form-signin input[type="password"] {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+    padding: .25rem .5rem;
+    border-radius: .2rem;
 }
 
 .form input {
