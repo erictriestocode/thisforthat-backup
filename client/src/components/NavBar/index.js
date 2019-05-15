@@ -8,10 +8,10 @@ import axios from 'axios';
 
 
 class Navbar extends Component {
-  state = {
-    userName: '',
+//   state = {
+//     userName: '',
     
-}
+// }
 
   componentDidMount() {
     var elem = document.querySelector(".sidenav");
