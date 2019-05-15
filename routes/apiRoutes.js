@@ -9,6 +9,7 @@ var isAuth = require("../config/passport/isAuth");
 
 module.exports = function (app) {
   var userID;
+  var userName;
   // Register
   app.post("/api/register", function (req, res) {
     console.log(req.body);
@@ -37,6 +38,7 @@ module.exports = function (app) {
     console.log(res.req.user.dataValues.id);
     const user = res.req.user.dataValues;
     userID = res.req.user.dataValues.id;
+    userName= res.req.user.dataValues.username;
     console.log("firs usedrID:", userID );
     res.json(user);
     // res.json(res.req.user.User.dataValues);

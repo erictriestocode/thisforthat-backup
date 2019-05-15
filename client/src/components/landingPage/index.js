@@ -14,29 +14,27 @@ class LandingPage extends Component {
                 <div class="hide-on-small-only">
                     <div className="row center">
                         <img class="image" src="https://github.com/ShelbyMarks/thisforthatlogo/blob/master/logo-2-min.jpg?raw=true" alt=""></img>
-                        {/* <img class="image" src="https://github.com/ShelbyMarks/thisforthatlogo/blob/master/logo-2-min.jpg?raw=true" alt="" width="120" height="200"></img>
-                                    <img class="image" src="https://github.com/ShelbyMarks/thisforthatlogo/blob/master/logo-2-min.jpg?raw=true" alt="" width="120" height="200"></img> */}
+                        <img class="image" src="https://github.com/ShelbyMarks/thisforthatlogo/blob/master/logo-2-min.jpg?raw=true" alt="" width="120" height="200"></img>
+                        <img class="image" src="https://github.com/ShelbyMarks/thisforthatlogo/blob/master/logo-2-min.jpg?raw=true" alt="" width="120" height="200"></img>
                     </div>
                 </div>
                 <br></br>
                 {/* rotating end*/}
 
                 <h1 className="header center orange-text">...Time is your commodity </h1>
-        
-
-
+       
              <div className="container">
                 <div className="row center">
                     <div className="col s4 m12">
                         <Link to='/registration'>
-                            <a href="/registration" id="button" className="btn-large waves-effect waves-light orange">Register</a>
+                            <a href="/registration" id="button" className="btn-large waves-effect waves-light orange hoverable">Register</a>
                         </Link>
                         <Link to='/signinform'>
-                            <a href="/signinform" id="button" className="btn-large waves-effect waves- blue darken-4">Sign In</a>
+                            <a href="/signinform" id="button" className="btn-large waves-effect waves- blue darken-4 hoverable">Sign In</a>
                         </Link>
+
                     </div>
                 </div>
-            </div>
                 <div className="row">
                     <div className="col s12 m4">
                         <div className="icon-block">
@@ -57,7 +55,6 @@ class LandingPage extends Component {
                                 <i className="material-icons">group</i>
                             </h2>
                             <h5 className="center">Grow</h5>
-
                             <p className="light">
                                 Grow your network & meet new talented friends
                 </p>
