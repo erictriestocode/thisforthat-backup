@@ -15,6 +15,7 @@ import Profile from "./components/Profile";
 import Help from './components/Help';
 import Registration from './components/Registration';
 import Transaction from './components/Transaction';
+import { AuthProvider } from './components/AuthContext';
 
 
 class App extends Component {
@@ -23,6 +24,7 @@ class App extends Component {
       <div>
         <BrowserRouter>
           {/* <Carousel /> */}
+          <AuthProvider>
          <Navbar/>
           <Switch>
             <Route exact path="/" component={LandingPage} />
@@ -33,6 +35,7 @@ class App extends Component {
             <Route path="/transaction" component={Transaction} />
             <Route path="/profile" component={Profile} />
           </Switch>
+          </AuthProvider>
         </BrowserRouter>
       </div>
     );

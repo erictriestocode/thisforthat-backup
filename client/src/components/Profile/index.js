@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {AuthConsumer} from '../AuthContext';
 import "./style-profile.css";
 import axios from 'axios';
 import moment from 'moment';
