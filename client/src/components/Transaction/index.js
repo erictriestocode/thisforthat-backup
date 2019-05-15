@@ -40,43 +40,11 @@ class Transaction extends Component {
     return axios.get('/api/findalltransUser')
         .then((res) => {
             this.setState({ User_Name_requesting_service: res.data[0].User_Name_requesting_service, UserId:res.data[0].UserId});
-            console.log("username sending : ", res.data[0].User_Name_requesting_service)
-            console.log("username sending : ", res.data[0].UserId)
+            console.log("username sending : ", res.data[0].User_Name_requesting_service);
+            console.log("username sending : ", res.data[0].UserId);
             
         });
 };
-    // UserRequesting = () => {
-    //     return axios.get('http://localhost:5000/api/findalltransUser')
-    //     .then( res=>
-    //        //res.data[0].User_Name_requesting_service,
-    //     this.setState({ User_Name_requesting_service: res.data[0].User_Name_requesting_service }),
-    //     //console.log("username sending : ", res.data[0].User_Name_requesting_service)//.data[0].User_Name_requesting_service
-    //     //this.setState({ User_Name_requesting_service: res.data[0].User_Name_requesting_service })
-    //      ); 
-    //      };
-
-     // look for user ID receiving transaction within the user table based on user name
-    // UserIdRec = () => {
-    //     return axios.get('http://localhost:5000/api/findalluser')
-    //     .then(res =>{
-    //         //var receiverId= res.data.id
-    //         console.log("This is the userid res:", res.data.username);
-    //         for (var i=0;i<res.data.length; i++){
-    //             if(res.data[i].user === "st"){//User_Name_Providing_service  User_Name_requesting_service
-    //                 //console.log("user receiving id : ", res.data.id);
-    //             var userId= res.data[i].id;
-    //             // console.log("user receiving id : ", userId);
-    //                 // console.log("Transaction page data : ", res.data.username);
-    //                 // console.log("Transaction page data : ", res.data.email);
-    //                 // console.log("Transaction page data : ", res.data.id)
-    //                                          };
-    //             console.log("user receiving id : ", userId);
-    //               };
-    //              }
-    //      )};
-
-// handle/grab information from trnasaction page
-
         transactionReq = e => {
             console.log("here");
             e.preventDefault();
@@ -109,31 +77,7 @@ class Transaction extends Component {
 
             }
         };
-          
-//HERE WE POST TO THE BACKEND ROUTES
-        // Newtransction = () => {
-            
-        //       axios.post('http://localhost:5000/api/sendTransRequest', {
-        //             Transaction_Desc,
-        //             Tokens_Transaction_amount, 
-        //             User_Name_requesting_service,
-        //             User_Name_Providing_service,
-        //             //TotalTokensBalance,
-        //             UserId
-        //         })
-        //         .then(response => {
-                
-        //         if(response.status === 201){
-        //           this.props.history.push('/Profile');
-        //         } 
-        //         })
-        //         .catch(err => {
-        //           console.log(err);
-               
-        //             });
-    
-        //         };
-            
+                     
 
 
     render(){
