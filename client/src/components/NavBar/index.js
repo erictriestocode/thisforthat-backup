@@ -1,6 +1,7 @@
 
 //set imports
 import React, { Component } from "react";
+import {AuthConsumer} from '../AuthContext';
 import "./style.css";
 import M from "materialize-css/dist/js/materialize.min.js";
 import "materialize-css/dist/css/materialize.min.css";
