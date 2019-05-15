@@ -1,6 +1,8 @@
 //set imports
 import React, { Component } from 'react';
 import axios from 'axios';
+import "./style.css";
+
 
 class SigninForm extends Component {
 
@@ -53,21 +55,27 @@ class SigninForm extends Component {
           
     }
 
-
 render() {
-
 
   return (
       <div>
-          <form onSubmit={this.handleSubmit}>
+        <br></br>
+        <br></br>
+        <br></br>
+        <div className="signin-container">
+        <div class="z-depth-1 grey lighten-4 row">
+            <form onSubmit={this.handleSubmit}>
               <label>Email</label><input type="text" name="email" onChange={this.handleTextChange}/>
-              <label>password</label><input type="password" name="password" onChange={this.handleTextChange}/>
-              <button type="submit">Submit</button>
-          </form>
-      </div>
+              <label>Password</label><input type="password" name="password" onChange={this.handleTextChange}/>
+              <button type="submit" className="btn-large waves-effect waves- blue darken-4">Sign In</button>
+            </form>
+          </div>
+        </div>
+    </div>
   )
 }
 }
 
 export default  SigninForm
+
 
