@@ -29,10 +29,45 @@
     color: #fff;
     display: inline-block;
     font-size: 2.1rem;
-    padding: 0;
+    padding: 2px;
     text-shadow: 1px 1px rgb(138, 138, 138), 2px 2px rgb(138, 138, 138), 3px 3px rgb(138, 138, 138);
   }
+
+.secondarytxt1{
+    font-family: 'Lobster';
+    color: rgb(73, 219, 73);
+    display: inline-block;
+    font-size: 2.1rem;
+    padding: 2px;
+    margin-right: 5%;
+
+  }
+  .secondarytxt2{
+    font-family: 'Lobster';
+    color:red;
+    display: inline-block;
+    font-size: 2.6rem;
+    padding: 2px;
+    margin-left: 500%;
+  }
   
-  
-  
-  
+
+ .nav ul li {
+  transition: background-color .3s;
+  float: left;
+  padding: 2px;
+}
+
+.nav ul li {
+  transition: background-color .3s;
+  float: left;
+  padding: 2px;
+}
+.tokenbank{
+  padding-bottom: 1%;
+}
+
+.ul.left.hide-on-medium-and-down{
+width:100px;
+
+}
