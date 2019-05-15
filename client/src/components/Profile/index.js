@@ -8,9 +8,10 @@ class Profile extends Component {
     state = {
        data: []
     }
-
+ 
     componentDidMount() {
         this. Usertransction();
+        //this.totalTransaction();
       }
 
 
@@ -25,6 +26,7 @@ class Profile extends Component {
         });
        
     };
+
 
     render() {
        // console.log("home props:", this.props);

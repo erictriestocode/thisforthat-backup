@@ -4,16 +4,34 @@ import React, { Component } from "react";
 import "./style.css";
 import M from "materialize-css/dist/js/materialize.min.js";
 import "materialize-css/dist/css/materialize.min.css";
+import axios from 'axios';
 
 
 class Navbar extends Component {
+  state = {
+    userName: '',
+    
+}
+
   componentDidMount() {
     var elem = document.querySelector(".sidenav");
+   //this.UserRequesting();
     var instance = M.Sidenav.init(elem, {
       edge: "left",
       inDuration: 250
+    
     });
   }
+
+//   UserRequesting = () => {
+//     return axios.get('/api/findalltransUser')
+//         .then((res) => {
+//             this.setState({ userName: res.data[0].User_Name_requesting_service});
+//             console.log("username sending : ", res.data[0].User_Name_requesting_service);
+
+            
+//         });
+// };
 
   render() {
     // const style = {
@@ -38,7 +56,7 @@ class Navbar extends Component {
                     </form>
                   </li>
                   <li><a href="/transaction">Transactions</a></li>
-                  <li><a href="/profile"><i className="fas fa-user-circle fa-lg"></i></a></li>
+                  <li><a href="/profile"><i className="fas fa-user-circle fa-lg"Name={this.userName} ></i></a></li>
                 </ul>
               </div>
             </nav >
