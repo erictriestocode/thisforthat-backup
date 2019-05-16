@@ -8,7 +8,7 @@
   },
   "test": {
     "username": "NULL",
-    "password": "NULL**",
+    "password": "NULL",
     "database": "NULL",
     "host": "NULL",
     "dialect": "NULL",
