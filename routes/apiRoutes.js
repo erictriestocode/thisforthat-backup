@@ -1,8 +1,8 @@
 var db = require("../models");
 var passport = require("../config/passport/passport");
 var request = require('request'); // for AJAX calls
-var userAPi = require("../config/passport/passport"); 
-var Sequelize= require("sequelize");
+var userAPi = require("../config/passport/passport");
+var Sequelize = require("sequelize");
 
 // **PASSPORT** middleware module
 var isAuth = require("../config/passport/isAuth");
@@ -38,8 +38,8 @@ module.exports = function (app) {
     console.log(res.req.user.dataValues.id);
     const user = res.req.user.dataValues;
     userID = res.req.user.dataValues.id;
-    userName= res.req.user.dataValues.username;
-    console.log("firs usedrID:", userID );
+    userName = res.req.user.dataValues.username;
+    console.log("firs usedrID:", userID);
     res.json(user);
     // res.json(res.req.user.User.dataValues);
     // res.json("/homes");
@@ -52,44 +52,65 @@ module.exports = function (app) {
   });
 
   // Get all transactions
-  app.get("/api/findalluser", function(req, res) {
-     db.User.findAll({}).then(function(results) {
+  app.get("/api/findalluser", function (req, res) {
+    db.User.findAll({}).then(function (results) {
       res.json(results);
     });
   });
 
   //find all transaction by username or user id
-  app.get("/api/findalltran", function(req, res) {
-    db.Transaction.findAll({}).then(function(results) {
+  app.get("/api/findalltran", function (req, res) {
+    db.Transaction.findAll({}).then(function (results) {
       res.json(results);
     });
   });
 
-  app.get("/api/findalltransUser", function(req, res) {
+
+  app.get("/api/findalltransUser", function (req, res) {
     console.log("WE ARE HERE")
-      const Op =Sequelize.Op;
-      db.Transaction.findAll({
-        where: {
-            [Op.or]: [{UserId: userID}, {User_Name_Providing_service: userName}]
+    const Op = Sequelize.Op;
+    db.Transaction.findAll({
+      where: {
+        [Op.or]: [{ UserId: userID }, { User_Name_Providing_service: userName }]
       },
-    }).then(function(dbtransaction) {
-      res.json(dbtransaction);
+    }).then(function (dbtransaction) {
+      const obj = {
+        dbtransaction,
+        userid: userID
+      }
+
+
+      res.json(obj);
     });
+
   });
 
-//  /app.get("/api/findalltransUser", function(req, res) {
-//     console.log("WE ARE HERE")
-//       const Op =Sequelize.Op;
-//       db.Transaction.findAll({
-//         sum('Tokens_Transaction_amount'){
-//         where: {
-//             UserId: userID
-//       }},
-//     }).then(function(dbtransaction) {
-//       res.json(dbtransaction);
-//     });
-//   });//
-  
+
+  // app.get("/api/findalltransUser", function(req, res) {
+  //   console.log("WE ARE HERE")
+  //     const Op =Sequelize.Op;
+  //     db.Transaction.findAll({
+  //       where: {
+  //           [Op.or]: [{UserId: userID}, {User_Name_Providing_service: userName}]
+  //     },
+  //   }).then(function(dbtransaction) {
+  //     res.json(dbtransaction);
+  //   });
+  // });
+
+  //  /app.get("/api/findalltransUser", function(req, res) {
+  //     console.log("WE ARE HERE")
+  //       const Op =Sequelize.Op;
+  //       db.Transaction.findAll({
+  //         sum('Tokens_Transaction_amount'){
+  //         where: {
+  //             UserId: userID
+  //       }},
+  //     }).then(function(dbtransaction) {
+  //       res.json(dbtransaction);
+  //     });
+  //   });//
+
 
 };
 
