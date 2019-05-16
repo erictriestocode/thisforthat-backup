@@ -10,20 +10,22 @@ A fun timekeeping app enabling users to digitally send / guarantee their time. U
 
 ## Why our app is useful
 * [As a user], I want to add formality to the colloquialism “buy me a beer and I’ll teach you..”
+   <p>[so that I can], keep track of what favors my friends owe me</P>
 
 * [As a user], I want to repay my friends’ favors with my time in whatever effort makes sense (PG-13 rated)
+   <p>[so that I can], have the option to spend my time and not my $$</P>
 
-* [As a user], I’m looking gain some supplemental income/goods/educational value by moonlighting my skills
-
+* [As a user], I want to trade training of my technical skills as a commodity
+   <p>[so that I can], gain some supplemental income/goods/educational value by moonlighting my skills</P>
 
 ### Technologies/Frameworks used: (NEEDS TO BE EDITED)
 Here are the technologies that you need to install 
-* [Bootstrap](https://getbootstrap.com/) An open source toolkit for developing with HTML, CSS, and JS. 
+* [Materialize](https://getbootstrap.com/) A modern responsive front-end framework based on Material Design.
 * [Node.js](https://nodejs.org/en/) A JavaScript runtime built on Chrome's V8 JavaScript engine.
 * [MySQL](https://www.mysql.com/) An open source relational database management system.
 
 * Node Modules:
-    * [Express](https://www.npmjs.com/package/express) Fast, unopinionated, minimalist web framework for node.
+    * [Express](https://materializecss.com/) Fast, unopinionated, minimalist web framework for node.
     * [Express-Session](https://www.npmjs.com/package/express-session) Simple session middleware for Express.
     * [DotEnv](https://www.npmjs.com/package/dotenv) Loads environment variables from .env file.
     * [Passport](https://www.npmjs.com/package/passport) An Express-compatible authentication middleware for Node.js.
@@ -40,9 +42,6 @@ In your Command Line Window install the following packages:
 ```
 npm install express express-session dotenv passport passport-local bcrypt-nodejs body-parser request mysql2 sequelize
 ```
-
-## API Reference
-[xxxxxxxx]
 
 ## Passport Tutorial
 [Using Passport With Sequelize and MySQL](https://code.tutsplus.com/tutorials/using-passport-with-sequelize-and-mysql--cms-27537) is a great tutorial to learn how to incorporate a local authentication into your Node app.
