@@ -25,6 +25,7 @@ var PORT = process.env.PORT || 5000;
 app.use(session({ secret: "wewillsaveallofyourtime!", resave: true, saveUninitialized: true })); //ENV variable in heroku
 app.use(passport.initialize());
 app.use(passport.session());
+// ***** CORS *****
 // app.use(function(req, res, next) {
 //   res.header("Access-Control-Allow-Origin", "*");
 //   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
