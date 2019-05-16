@@ -15,6 +15,19 @@
 
 }
 
+.card .card-reveal {
+  padding: 0px;
+  position: absolute;
+  background-color: #fff;
+  width: 100%;
+  overflow-y: auto;
+  left: 0;
+  top: 100%;
+  height: 100%;
+  z-index: 3;
+  display: none;
+}
+
 #addbutton {
   margin: 0px;
   top: auto;

@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import "./style.css";
+// import NavBar1 from '../NavBar1';
+
 
 
 class LandingPage extends Component {
     render() {
         return (
             <div>
-
+             {/* <NavBar1/> */}
                 {/* <div className="container"> */}
 
                 {/* rotating start */}
@@ -27,7 +29,7 @@ class LandingPage extends Component {
                 <div className="row center">
                     <div className="col s4 m12">
                         <Link to='/registration'>
-                            <a href="/registration" id="button" className="btn-large waves-effect waves-light orange hoverable">Register</a>
+                            <a href="/registration" id="button" className="btn-large waves-effect waves- orange darken-1 hoverable">Register</a>
                         </Link>
                         <Link to='/signinform'>
                             <a href="/signinform" id="button" className="btn-large waves-effect waves- blue darken-4 hoverable">Sign In</a>
