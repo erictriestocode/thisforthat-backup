@@ -12,6 +12,7 @@ class Profile extends Component {
  
     componentDidMount() {
         this. Usertransction();
+        this.UserRequesting();
         //this.totalTransaction();
       }
 
@@ -27,6 +28,16 @@ class Profile extends Component {
         });
        
     };
+
+  UserRequesting = () => {
+    return axios.get('/api/findalltransUser')
+        .then((res) => {
+           // this.setState({ userName: res.data[0].User_Name_requesting_service});
+            console.log("username sending : ", res.data[0].User_Name_requesting_service);
+
+            
+        });
+};
 
 
     render() {

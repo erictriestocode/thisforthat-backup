@@ -36,7 +36,6 @@ render() {
   return (
     <div>
       <div>
-<<<<<<< HEAD
         <div>
 
          < nav >
@@ -60,28 +59,6 @@ render() {
              </div>
            </nav >
 
-=======
-        < nav >
-          <div className="nav-wrapper z-depth-3">
-            <a href="/home" className="center brand-logo">ThisforThat</a>
-            <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
-            <ul className="left hide-on-med-and-down">
-              <li>
-                <a>Token Bank:</a>
-              </li>
-              <li><a className="secondarytxt1">+ {/* SUMMARY OF RECEIVED TOKENS HERE SANTIAGO */}</a></li>
-              <li><a className="secondarytxt2">- {/* SUMMARY OF SENT TOKENS SANTIAGO */}</a></li>
-            </ul>
-
-            <ul className="right hide-on-med-and-down">
-              <li>
-              </li>
-              <li><a href="/transaction">Transactions</a></li>
-              <li><a href="/profile"><i className="fas fa-user-circle fa-lg"></i>{/* USERNAME VARIABLE HERE SANTIAGO */}</a></li>
-            </ul>
-          </div>
-        </nav >
->>>>>>> de5ef2d44fb3cb15f7afb06339d1235b8b472f9b
 
         <ul className="sidenav" id="mobile-demo">
           <li><a href="/home">ThisforThat</a></li>
@@ -95,6 +72,7 @@ render() {
         </ul>
       </div >
       <a href="#" data-target="slide-out" className="sidenav-trigger"></a>
+    </div >
     </div >
   );
 }
