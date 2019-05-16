@@ -1,7 +1,5 @@
-
 //set imports
 import React, { Component } from "react";
-import {AuthConsumer} from '../AuthContext';
 import "./style.css";
 import M from "materialize-css/dist/js/materialize.min.js";
 import "materialize-css/dist/css/materialize.min.css";
@@ -34,12 +32,11 @@ class Navbar extends Component {
 //         });
 // };
 
-  render() {
-    // const style = {
-    //   color: 'white'
-    // };
-    return (
+render() {
+  return (
+    <div>
       <div>
+<<<<<<< HEAD
         <div>
 
          < nav >
@@ -63,18 +60,44 @@ class Navbar extends Component {
              </div>
            </nav >
 
+=======
+        < nav >
+          <div className="nav-wrapper z-depth-3">
+            <a href="/home" className="center brand-logo">ThisforThat</a>
+            <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
+            <ul className="left hide-on-med-and-down">
+              <li>
+                <a>Token Bank:</a>
+              </li>
+              <li><a className="secondarytxt1">+ {/* SUMMARY OF RECEIVED TOKENS HERE SANTIAGO */}</a></li>
+              <li><a className="secondarytxt2">- {/* SUMMARY OF SENT TOKENS SANTIAGO */}</a></li>
+            </ul>
 
-          <ul className="sidenav" id="mobile-demo">
-            <li><a href="/home">ThisforThat</a></li>
-            <li><a href="/transaction">Transactions</a></li>
-            <li><a href="/profile"><i className="fas fa-user-circle fa-lg"></i></a></li>
-          </ul>
-        </div >
-        <a href="#" data-target="slide-out" className="sidenav-trigger"></a>
+            <ul className="right hide-on-med-and-down">
+              <li>
+              </li>
+              <li><a href="/transaction">Transactions</a></li>
+              <li><a href="/profile"><i className="fas fa-user-circle fa-lg"></i>{/* USERNAME VARIABLE HERE SANTIAGO */}</a></li>
+            </ul>
+          </div>
+        </nav >
+>>>>>>> de5ef2d44fb3cb15f7afb06339d1235b8b472f9b
+
+        <ul className="sidenav" id="mobile-demo">
+          <li><a href="/home">ThisforThat</a></li>
+          <li><a href="/transaction">Transactions</a></li>
+          <li><a href="/profile"><i className="fas fa-user-circle fa-lg"></i></a></li>
+          <li>
+            <a>Token Bank:</a>
+            <li><a className="secondarytxt1"> + {/* SUMMARY OF RECEIVED TOKENS HERE SANTIAGO */}</a></li>
+            <li><a className="secondarytxt1"> - {/* SUMMARY OF SENT TOKENS SANTIAGO */}</a></li>
+          </li>
+        </ul>
       </div >
-    );
-  }
+      <a href="#" data-target="slide-out" className="sidenav-trigger"></a>
+    </div >
+  );
+}
 }
 
 export default Navbar
-
