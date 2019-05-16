@@ -2,12 +2,12 @@ require("dotenv").config();
 var express = require("express");
 var passport = require('passport');
 var session = require('express-session');
-var passportConfig = require('./config/passport/passport');
+// var passportConfig = require('./config/passport/passport');
 // var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var http = require('http');
 var path = require('path');
-require("./routes/apiRoutes")(app);
+// require("./routes/apiRoutes")(app);
 
 // ****** PASSPORT CONFIG ******************
 var passport = require("./config/passport/passport");
