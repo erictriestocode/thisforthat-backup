@@ -7,6 +7,7 @@ var passportConfig = require('./config/passport/passport');
 var bodyParser = require('body-parser');
 var http = require('http');
 var path = require('path');
+require("./routes/apiRoutes")(app);
 
 // ****** PASSPORT CONFIG ******************
 var passport = require("./config/passport/passport");
@@ -37,6 +38,7 @@ app.use(bodyParser());
 // app.use(cookieParser());
 app.use(express.json());
 app.use(express.static(__dirname + "/public/"));
+
 
 
 // if set to true the tables gets dropped and created
