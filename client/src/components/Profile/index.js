@@ -3,6 +3,7 @@ import {AuthConsumer} from '../AuthContext';
 import "./style-profile.css";
 import axios from 'axios';
 import moment from 'moment';
+import Navbar from '../NavBar';
 
 class Profile extends Component {
 
@@ -44,6 +45,8 @@ class Profile extends Component {
        // console.log("home props:", this.props);
     return (
         <div>
+            <Navbar/>
+
                 <div className="container">
                     <div className="timeline">
                     {/* "re-render" because we want new info to show  */}

@@ -6,7 +6,7 @@ import "materialize-css/dist/css/materialize.min.css";
 import axios from 'axios';
 
 
-class Navbar extends Component {
+class EmptyNav extends Component {
 //   state = {
 //     userName: '',
     
@@ -55,17 +55,15 @@ render() {
                  </li>
                  <li><a href="/transaction">Transactions</a></li>
                  <li><a href="/profile"><i className="fas fa-user-circle fa-lg"></i></a></li>
-                 <li><a href="/api/logout">Logout</a></li>
                </ul>
              </div>
            </nav >
 
 
         <ul className="sidenav" id="mobile-demo">
-          <li><a href="/home">Home</a></li>
+          <li><a href="/home">ThisforThat</a></li>
           <li><a href="/transaction">Transactions</a></li>
           <li><a href="/profile"><i className="fas fa-user-circle fa-lg"></i></a></li>
-          <li><a href="/api/logout">Logout</a></li>
           <li>
             <a>Token Bank:</a>
             <li><a className="secondarytxt1"> + {/* SUMMARY OF RECEIVED TOKENS HERE SANTIAGO */}</a></li>
@@ -80,4 +78,4 @@ render() {
 }
 }
 
-export default Navbar
+export default EmptyNav

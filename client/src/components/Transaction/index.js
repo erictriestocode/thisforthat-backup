@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { createBrowserHistory } from 'history';
 import "./style.css";
+import Navbar from '../NavBar';
+
 
 class Transaction extends Component {
 
@@ -72,17 +74,15 @@ class Transaction extends Component {
             })
             .catch(err => {
               console.log(err);
-           
                 });
-
             }
         };
-                     
-
 
     render(){
         return (
             <div>
+             <Navbar/>
+
             <div className="form-container">
             <form id="TransactionForm" onSubmit={this.transactionReq}>
                 <div className="row">
@@ -126,17 +126,6 @@ class Transaction extends Component {
                     </div>
                 </form> 
              </div>
-
-             <div className="container">
-                <div className="row">
-                    <div className="col-sm-8 col-sm-offset-2">
-                        <h2>Testing</h2>
-                        <hr />
-                            <div id="test-area"></div>
-                    </div>
-                </div>
-
-            </div>
         </div>
         );
     };
