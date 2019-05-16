@@ -51,7 +51,7 @@ if (process.env.NODE_ENV === ' production'){
 }
 // Routes
 require("./routes/apiRoutes")(app);
-app.get("/", (req, res) => {
+app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, 'client/build', "./client/public/index.html"));
 });
 
