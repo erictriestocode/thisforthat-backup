@@ -72,24 +72,46 @@ module.exports = function (app) {
         where: {
             [Op.or]: [{UserId: userID}, {User_Name_Providing_service: userName}]
       },
-    }).then(function(dbtransaction) {
-      res.json(dbtransaction);
+    }).then(function(dbtransaction) 
+    {
+      const obj ={
+        dbtransaction,
+        userid:userID
+      }
+     
+
+      res.json(obj);
     });
+
   });
 
-//  /app.get("/api/findalltransUser", function(req, res) {
-//     console.log("WE ARE HERE")
-//       const Op =Sequelize.Op;
-//       db.Transaction.findAll({
-//         sum('Tokens_Transaction_amount'){
-//         where: {
-//             UserId: userID
-//       }},
-//     }).then(function(dbtransaction) {
-//       res.json(dbtransaction);
-//     });
-//   });//
-  
+  //find all transaction by username or user id
 
-};
+  app.get("/api/findtrans/:id", function(req, res) {
+    if (req.params.id) {
+      
+      db.Transaction.destroy({
+        where: {
+          id: req.params.id
+        }
+      }).then(function(result) {
+        return res.json(result);
+      });
+    
+    }
+  });
+
+//   app.get("/api/findtrans/:id", function(req, res) {
+
+//     const Op =Sequelize.Op;
+//     db.Transaction.findAll({
+//       where: {
+//          id: [{req.params.id}]
+//       }
+//      // db.Transaction.findByid(req.params.id)
+//       }).then(function(dbtransaction) {
+//         res.json(dbtransaction);
+//       });
+
+ };
 

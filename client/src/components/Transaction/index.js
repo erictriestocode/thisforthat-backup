@@ -39,12 +39,25 @@ class Transaction extends Component {
    UserRequesting = () => {
     return axios.get('/api/findalltransUser')
         .then((res) => {
-            this.setState({ User_Name_requesting_service: res.data[0].User_Name_requesting_service, UserId:res.data[0].UserId});
-            console.log("username sending : ", res.data[0].User_Name_requesting_service);
-            console.log("username sending : ", res.data[0].UserId);
+            this.setState({ User_Name_requesting_service: res.data.dbtransaction[0].User_Name_requesting_service, UserId:res.data.dbtransaction[0].UserId});
+            // console.log("username sending : ", res.data.dbtransaction[0].User_Name_requesting_service);
+            // console.log("username sending : ", res.data.dbtransaction[0].UserId);
             
         });
 };
+validaterecvr = () => {
+    return axios.get('/api/findalluser')
+        .then((res) => {
+            console.log("username user table : ", res);
+            //console.log("username statrte : ", User_Name_Providing_service);
+
+            //this.setState({ User_Name_requesting_service: res.data.dbtransaction[0].User_Name_requesting_service, UserId:res.data.dbtransaction[0].UserId});
+            // console.log("username sending : ", res.data.dbtransaction[0].User_Name_requesting_service);
+            // console.log("username sending : ", res.data.dbtransaction[0].UserId);
+            
+        });
+};
+
         transactionReq = e => {
             console.log("here");
             e.preventDefault();
@@ -55,6 +68,7 @@ class Transaction extends Component {
                     loginError: false,
                     registerError: true,
                 });
+                console.log(User_Name_Providing_service);
             } else{
                 axios.post('http://localhost:5000/api/sendTransRequest', {
                 Transaction_Desc,
