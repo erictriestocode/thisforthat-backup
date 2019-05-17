@@ -25,8 +25,8 @@ class Profile extends Component {
             .catch(err => {
                 console.log(err)
             });
-
     };
+
     //********sum totals sent/recvd */
     UserRequesting = () => {
         return axios.get('/api/findalltransUser')
@@ -51,6 +51,14 @@ class Profile extends Component {
             })
     };
 
+    deletetrans = (id) => {
+        console.log(id)
+        axios.get('/api/findtrans/' + id)
+            .then(function(response){
+                console.log(response)
+            })
+    };
+
 
     render() {
         // console.log("home props:", this.props);
@@ -69,6 +77,10 @@ class Profile extends Component {
                                         <div className="card-content">
                                             <span className="card-title activator grey-text text-darken-4">Transaction Amount: {item.Tokens_Transaction_amount}<i
                                                 className="material-icons right">more_vert</i></span>
+                                                
+                                            <button onClick={() => this.deletetrans(item.id)}>{item.id}</button>
+                                            
+
                                         </div>
                                         <div className="card-reveal">
                                             <span className="card-title grey-text text-darken-4">Payment for: {item.Transaction_Desc}<i
