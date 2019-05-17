@@ -1,14 +1,15 @@
 {
   "development": {
-    "username": "eric",
+  "username": "eric",
     "password": "password",
+
     "database": "timefortime_db",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "NULL",
-    "password": "NULL**",
+    "password": "NULL",
     "database": "NULL",
     "host": "NULL",
     "dialect": "NULL",
