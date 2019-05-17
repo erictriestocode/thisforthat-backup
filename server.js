@@ -7,6 +7,7 @@ var passportConfig = require('./config/passport/passport');
 var bodyParser = require('body-parser');
 var http = require('http');
 var path = require('path');
+var cors = require('cors');
 
 // ****** PASSPORT CONFIG ******************
 var passport = require("./config/passport/passport");
@@ -24,11 +25,12 @@ var PORT = process.env.PORT || 5000;
 app.use(session({ secret: "wewillsaveallofyourtime!", resave: true, saveUninitialized: true })); //ENV variable in heroku
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
- });
+app.use(cors())
+// app.use(function(req, res, next) {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//   next();
+//  });
 // ****** END EXPRESS-SESSION & PASSPORT **************
 
 // Middleware
