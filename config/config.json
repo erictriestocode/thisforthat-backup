@@ -1,7 +1,7 @@
 {
   "development": {
-    "username": "eric",
-    "password": "password",
+    "username": "NULL",
+    "password": "NULL",
     "database": "timefortime_db",
     "host": "localhost",
     "dialect": "mysql"

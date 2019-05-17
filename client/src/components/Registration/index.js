@@ -39,7 +39,7 @@ class Registration extends Component {
             console.log("Starting API Call!")
             axios
                 //HERE WE POST TO THE BACKEND ROUTES
-                .post('https://thisforthatapp.herokuapp.com/api/register', {
+                .post('/api/register', {
                     email,
                     username,
                     password
