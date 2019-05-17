@@ -69,4 +69,6 @@ color: blue;
 .card-panel{
 margin-top: 1%;
 }
-   
+#button.btn-large.waves-effect.waves-light.red{
+  font-size:6px;
+}
