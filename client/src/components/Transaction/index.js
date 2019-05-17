@@ -39,11 +39,11 @@ class Transaction extends Component {
 
     //grab user name requesting transaction from the API
     UserRequesting = () => {
-        return axios.get('/api/findalltransUser')
+        return axios.get('/api/signeduser')
             .then((res) => {
-                this.setState({ User_Name_requesting_service: res.data.dbtransaction[0].User_Name_requesting_service, UserId: res.data.dbtransaction[0].UserId });
-                console.log("username sending : ", res.data.dbtransaction[0].User_Name_requesting_service);
-                console.log("username sending : ", res.data.dbtransaction[0].UserId);
+                this.setState({ User_Name_requesting_service: res.data[0].username, UserId: res.data[0].id });
+                console.log("username sending : ", res.data[0].username);
+                console.log("username sending : ", res.data[0].id);
 
             });
     };

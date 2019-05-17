@@ -58,6 +58,16 @@ module.exports = function (app) {
     });
   });
 
+  app.get("/api/signeduser", function (req, res) {
+    db.User.findAll({
+      where: {
+       id: userID 
+      },
+    }).then(function (results) {
+      res.json(results);
+    });
+  });
+
   //find all transaction by username or user id
   app.get("/api/findalltran", function (req, res) {
     db.Transaction.findAll({}).then(function (results) {
