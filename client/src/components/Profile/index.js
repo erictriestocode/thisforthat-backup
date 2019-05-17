@@ -12,7 +12,7 @@ class Profile extends Component {
 
     componentDidMount() {
         this.Usertransction();
-        this.UserRequesting();
+        
     }
 
 
@@ -27,29 +27,7 @@ class Profile extends Component {
             });
     };
 
-    //********sum totals sent/recvd */
-    UserRequesting = () => {
-        return axios.get('/api/findalltransUser')
-            .then((res) => {
 
-                var result = res.data.dbtransaction;
-                var sentToken = 0;
-                var currentUser = res.data.userid;
-                var recToken = 0;
-
-
-                for (var i = 0; i < result.length; i++) {
-                    if (result[i].UserId == currentUser) {
-                        sentToken += parseInt(result[i].Tokens_Transaction_amount);
-                    }
-                    else {
-                        recToken += parseInt(result[i].Tokens_Transaction_amount);
-                    }
-                }
-                console.log("username sentToken : ", sentToken);
-                console.log("username recToken : ", recToken);
-            })
-    };
 
     deletetrans = (id) => {
         console.log(id)
@@ -57,6 +35,7 @@ class Profile extends Component {
             .then(function(response){
                 console.log(response)
             })
+            //Location.reload()
     };
 
 

@@ -9,12 +9,15 @@ import axios from 'axios';
 class Navbar extends Component {
   //   state = {
   //     userName: '',
+  //     sentToken: '',
+  //     sentToken:''
 
   // }
 
   componentDidMount() {
     var elem = document.querySelector(".sidenav");
-    //this.UserRequesting();
+    // this.UserRequesting();
+    // this.UsernameRequesting();
     var instance = M.Sidenav.init(elem, {
       edge: "left",
       inDuration: 250
@@ -22,39 +25,66 @@ class Navbar extends Component {
     });
   }
 
-  //   UserRequesting = () => {
+  //   UsernameRequesting = () => {
   //     return axios.get('/api/findalltransUser')
   //         .then((res) => {
-  //             this.setState({ userName: res.data[0].User_Name_requesting_service});
-  //             console.log("username sending : ", res.data[0].User_Name_requesting_service);
+  //             this.setState({ userName: res.data.dbtransaction[0].User_Name_requesting_service});
+  //             //console.log("username sending : ", res.data.dbtransaction.dbtransaction[0].User_Name_requesting_service);
 
 
   //         });
   // };
 
+  //   //********sum totals sent/recvd */
+  //   UserRequesting = () => {
+  //     return axios.get('/api/findalltransUser')
+  //         .then((res) => {
+
+  //             var result = res.data.dbtransaction;
+  //             var sentToken = 0;
+  //             var currentUser = res.data.userid;
+  //             var recToken = 0;
+
+
+  //             for (var i = 0; i < result.length; i++) {
+  //                 if (result[i].UserId == currentUser) {
+  //                     sentToken += parseInt(result[i].Tokens_Transaction_amount);
+  //                     this.setState({sentToken: sentToken});
+  //                 }
+  //                 else {
+  //                     recToken += parseInt(result[i].Tokens_Transaction_amount);
+  //                     this.setState({sentToken: sentToken});
+  //                 }
+  //             }
+  //             console.log("username sentToken : ", sentToken);
+  //             console.log("username recToken : ", recToken);
+  //         })
+  // };
+  
   render() {
     return (
       <div>
+        {/* {this.state.map(item => { */}
         <div>
           <div>
 
             < nav >
-              <div className="nav-wrapper z-depth-3">               {/* THIS IS WHERE THE SUMMARY WILL GO SANTIAGO */}
+              <div className="nav-wrapper z-depth-3">               {/* THIS IS WHERE THE SUMMARY WILL GO SANTIAGO *key={item.sentToken}*/}
                 <a href="/home" className="center brand-logo">ThisforThat</a>
                 <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
                 <ul className="left hide-on-med-and-down">
                   <li>
                     <a>Token Bank:</a>
                   </li>
-                  <li><a className="secondarytxt1">+ {/* EXACTLY HERE SANTIAGO */}</a></li>
-                  <li><a className="secondarytxt2">- {/* EXACTLY HERE SANTIAGO */}</a></li>
+                  <li><a className="secondarytxt1">+ {/*item.sentToken*/}</a></li>
+                  <li><a className="secondarytxt2">- {/*item.recToken*/}</a></li>
                 </ul>
 
                 <ul className="right hide-on-med-and-down">
                   <li>
                   </li>
                   <li><a href="/transaction">Transactions</a></li>
-                  <li><a href="/profile"><i className="fas fa-user-circle fa-lg"></i></a></li>
+                  <li><a href="/profile"><i className="fas fa-user-circle fa-lg"></i>{/*item.userName*/}</a></li>
                   <li><a href="/api/logout">Logout</a></li>
                 </ul>
               </div>
@@ -75,6 +105,7 @@ class Navbar extends Component {
           </div >
           <a href="#" data-target="slide-out" className="sidenav-trigger"></a>
         </div >
+{/* })} */}
       </div >
     );
   }
