@@ -32,7 +32,7 @@ class LandingPage extends Component {
                             <a href="/registration" id="button" className="btn-large waves-effect waves- orange darken-1 hoverable">Register</a>
                         </Link>
                         <Link to='/signinform'>
-                            <a href="/signinform" id="button" className="btn-large waves-effect waves- blue darken-4 hoverable">Sign In</a>
+                            <a href="/signinform" id="button" className="btn-large waves-effect waves- blue darken-4 hoverable">SignIn</a>
                         </Link>
 
                     </div>
@@ -86,7 +86,7 @@ class LandingPage extends Component {
             </div>
 
 
-            // </div >
+            </div >
         )
     }
 }
