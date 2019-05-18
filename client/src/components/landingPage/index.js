@@ -25,8 +25,8 @@ class LandingPage extends Component {
                 <h1 className="header center orange-text">...Time is your commodity </h1>
        
              <div className="container">
-                <div className="row center">
-                    <div className="col s4 m12">
+                <div className="row">
+                    <div className="lpContainer">
                         <Link to='/registration'>
                             <a href="/registration" id="button" className="btn-large waves-effect waves- orange darken-1 hoverable">Register</a>
                         </Link>
@@ -36,6 +36,9 @@ class LandingPage extends Component {
 
                     </div>
                 </div>
+                <br /><br />
+
+                <div className="container">
                 <div className="row">
                     <div className="col s12 m4">
                         <div className="icon-block">
@@ -74,18 +77,12 @@ class LandingPage extends Component {
                                 Learn the art of trading & capitalize on your desirable skill-sets </p>
                         </div>
                     </div>
-
                 </div>
-                {/* <div className="row center">
-                        <h5 className="header col s12 light">A fun timekeeping app enabling users to digitally send / guarantee their
-            time. Users can trade their time as a commodity.</h5>
-                    </div> */}
-
                 <br /><br />
             </div>
-
-
             </div >
+            </div>
+
         )
     }
 }
