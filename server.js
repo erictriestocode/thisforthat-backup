@@ -19,6 +19,13 @@ var db = require("./models");
 var app = express();
 var PORT = process.env.PORT || 5000;
 
+// Middleware
+app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser());
+// app.use(cookieParser());
+app.use(express.json());
+app.use(express.static(__dirname + "/public/"));
+
 // ****** EXPRESS-SESSION & PASSPORT ******************
 // use sessions to keep track of user's login status
 app.use(session({ secret: "wewillsaveallofyourtime!", resave: true, saveUninitialized: true })); //ENV variable in heroku
@@ -30,13 +37,6 @@ app.use(function(req, res, next) {
   next();
  });
 // ****** END EXPRESS-SESSION & PASSPORT **************
-
-// Middleware
-app.use(express.urlencoded({ extended: false }));
-app.use(bodyParser());
-// app.use(cookieParser());
-app.use(express.json());
-app.use(express.static(__dirname + "/public/"));
 
 
 // if set to true the tables gets dropped and created
