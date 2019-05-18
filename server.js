@@ -44,7 +44,7 @@ app.use(function(req, res, next) {
 
 
 // if set to true the tables gets dropped and created
-const syncOptions = { force: false };
+const syncOptions = { force: true };
 
 
 // Routes
