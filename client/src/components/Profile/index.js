@@ -3,6 +3,7 @@ import { AuthConsumer } from '../AuthContext';
 import "./style-profile.css";
 import axios from 'axios';
 import moment from 'moment';
+import Navbar from '../NavBar';
 
 class Profile extends Component {
 
@@ -43,7 +44,7 @@ class Profile extends Component {
         // console.log("home props:", this.props);
         return (
             <div>
-                {/* <Navbar /> */}
+                <Navbar />
 
                 <div className="container">
                     <div className="timeline">
@@ -57,7 +58,9 @@ class Profile extends Component {
                                             <span className="card-title activator grey-text text-darken-4">Transaction Amount: {item.Tokens_Transaction_amount}<i
                                                 className="material-icons right">more_vert</i></span>
                                                 
-                                            <button onClick={() => this.deletetrans(item.id)}>{item.id}</button>
+                                            <button onClick={() => this.deletetrans(item.id)} onClick={() => refreshPage()} >{item.id}</button>
+
+                                            
                                             
 
                                         </div>
