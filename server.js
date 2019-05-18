@@ -21,6 +21,10 @@ var PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));
+// HEROKU
+if (process.env.NODE_ENV === ' production'){
+  app.use(express.static('client/build'));
+};
 app.use(bodyParser());
 // app.use(cookieParser());
 app.use(express.json());
@@ -42,10 +46,7 @@ app.use(function(req, res, next) {
 // if set to true the tables gets dropped and created
 var syncOptions = { force: false };
 
-// HEROKU
-if (process.env.NODE_ENV === ' production'){
-  app.use(express.static('client/build'));
-}
+
 // Routes
 require("./routes/apiRoutes")(app);
 app.get("*", (req, res) => {
