@@ -8,9 +8,13 @@ var LocalStrategy = require("passport-local").Strategy;
 var db = require("../../models");
 
 // setup Local Strategy using email and password saved in a database
-passport.use(new LocalStrategy({ usernameField: "email" },
-  function (email, password, done) {
-    db.User.findOne({ where: { email: email } }).then(function (dbUser) {
+passport.use(
+  new LocalStrategy({ usernameField: "email" }, function(
+    email,
+    password,
+    done
+  ) {
+    db.User.findOne({ where: { email: email } }).then(function(dbUser) {
       // if email and password are not correct, flash a message (Flash not set up)
       if (!dbUser) {
         return done(null, false, { message: "No email exists by that name." });
@@ -22,18 +26,18 @@ passport.use(new LocalStrategy({ usernameField: "email" },
       console.log("inside passport.js line 22");
       return done(null, dbUser);
     });
-  }
-));
+  })
+);
 
 // Session setup - need to review serializeUser & deserializeUser
 // From Doc: Passport will serialize and deserialize user instances to and from the session
 
 // this serialized the user object data is saved in express-session
-passport.serializeUser(function (user, callback) {
+passport.serializeUser(function(user, callback) {
   callback(null, user);
 });
 // this deserializes the user object from the session
-passport.deserializeUser(function (userObj, callback) {
+passport.deserializeUser(function(userObj, callback) {
   callback(null, userObj);
 });
 
