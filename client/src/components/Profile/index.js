@@ -58,7 +58,7 @@ class Profile extends Component {
                                             <span className="card-title activator grey-text text-darken-4">Transaction Amount: {item.Tokens_Transaction_amount}<i
                                                 className="material-icons right">more_vert</i></span>
                                                 
-                                            <button onClick={() => this.deletetrans(item.id)} onClick={() => refreshPage()} >{item.id}</button>
+                                            <button onClick={() => this.deletetrans(item.id)} >{item.id}</button>
 
                                             
                                             
