@@ -1,4 +1,4 @@
-require("dotenv").config();
+require("dotenv").config()
 var express = require("express");
 var passport = require('passport');
 var session = require('express-session');
