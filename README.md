@@ -18,7 +18,7 @@ A fun timekeeping app enabling users to digitally send / guarantee their time. U
 * [As a user], I want to trade training of my technical skills as a commodity
    <p>[so that I can], gain some supplemental income/goods/educational value by moonlighting my skills</P>
 
-### Technologies/Frameworks used: (NEEDS TO BE EDITED)
+### Technologies/Frameworks used:
 Here are the technologies that you need to install 
 * [Materialize](https://getbootstrap.com/) A modern responsive front-end framework based on Material Design.
 * [Node.js](https://nodejs.org/en/) A JavaScript runtime built on Chrome's V8 JavaScript engine.
