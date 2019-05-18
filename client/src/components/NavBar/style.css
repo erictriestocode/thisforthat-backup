@@ -34,21 +34,23 @@
   }
 
 .secondarytxt1{
-    font-family: 'Lobster';
-    color: rgb(73, 219, 73);
-    display: inline-block;
-    font-size: 2.1rem;
-    padding: 2px;
-    margin-right: 5%;
+  font-family: 'Lobster';
+  color: rgb(73, 219, 73);
+  display: inline-block;
+  font-size: 2.1rem;
+ 
+  margin-right: 1%;
+  width: 120px;
+}
 
-  }
   .secondarytxt2{
     font-family: 'Lobster';
     color:red;
     display: inline-block;
     font-size: 2.6rem;
-    padding: 2px;
-    margin-left: 500%;
+   
+   
+    width: 120px;
   }
   
 

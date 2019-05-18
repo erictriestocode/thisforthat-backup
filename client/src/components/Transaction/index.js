@@ -92,7 +92,7 @@ class Transaction extends Component {
                                     className="form-control"
                                     type="text"
                                     name="Transaction_Desc"
-                                    placeholder="Write a description for your trasnaction"
+                                    placeholder="Write a description for your transaction"
                                     onChange={this.handleTextChange}
                                 />
                                 <br />
@@ -121,7 +121,7 @@ class Transaction extends Component {
                                 {/* <p className="cool-font">AailableTokensBalance</p>
                         <input className="form-control" rows="3" id="TotalTokensBalance" placeholder="Total Tokens Balance"></input> */}
 
-                                <button id="transreques-submit" className="btn btn-lg pull-right" href="profile.html">Submit!</button>
+                                <button id="transreques-submit" className="btn btn-lg pull-right" >Submit!</button>
                             </div>
                         </div>
                     </form>
