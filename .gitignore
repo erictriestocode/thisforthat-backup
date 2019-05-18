@@ -2,6 +2,5 @@
 node_modules
 npm-debug.log
 .env
+client/.env
 test/
-config/config.json
-config/config.json
