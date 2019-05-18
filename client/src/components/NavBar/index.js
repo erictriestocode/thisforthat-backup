@@ -13,12 +13,11 @@ class Navbar extends Component {
   // }
 
   componentDidMount() {
-    var elem = document.querySelector(".sidenav");
+    const elem = document.querySelector(".sidenav");
     //this.UserRequesting();
-    var instance = M.Sidenav.init(elem, {
+    const instance = M.Sidenav.init(elem, {
       edge: "left",
       inDuration: 250
-
     });
   }
 

@@ -59,6 +59,17 @@ class SigninForm extends Component {
 
     return (
       <div>
+      <div className="card-panel blue darken-4">
+      <span className="grey-text text-lighten-2">
+          <div className="center brand-logo">ThisforThat</div>
+          </span>
+
+          <span className="grey-text text-lighten-2" id="appName">
+              <h1 className="signin">Sign In</h1>
+          </span>
+          
+      </div>
+      <div>
         <br></br>
         <br></br>
         <br></br>
@@ -72,6 +83,8 @@ class SigninForm extends Component {
           </div>
         </div>
       </div>
+            </div>
+
     )
   }
 }
