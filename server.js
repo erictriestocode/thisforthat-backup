@@ -1,23 +1,23 @@
 require("dotenv").config()
-var express = require("express");
-var passport = require('passport');
-var session = require('express-session');
-var passportConfig = require('./config/passport/passport');
-// var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var http = require('http');
-var path = require('path');
+const express = require("express");
+// const passport = require('passport');
+const session = require('express-session');
+// const passportConfig = require('./config/passport/passport');
+// const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const http = require('http');
+const path = require('path');
 
 // ****** PASSPORT CONFIG ******************
-var passport = require("./config/passport/passport");
+const passport = require("./config/passport/passport");
 // ****** END PASSPORT CONFIG **************
 
 // **** DB MODELS ****
-var db = require("./models");
+const db = require("./models");
 // *******
 
-var app = express();
-var PORT = process.env.PORT || 5000;
+const app = express();
+const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));
@@ -32,7 +32,7 @@ app.use(express.static(__dirname + "/public/"));
 
 // ****** EXPRESS-SESSION & PASSPORT ******************
 // use sessions to keep track of user's login status
-app.use(session({ secret: "wewillsaveallofyourtime!", resave: true, saveUninitialized: true })); //ENV variable in heroku
+app.use(session({ secret: "wewillsaveallofyourtime!", resave: true, saveUninitialized: true })); //ENV constiable in heroku
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(function(req, res, next) {
@@ -44,7 +44,7 @@ app.use(function(req, res, next) {
 
 
 // if set to true the tables gets dropped and created
-var syncOptions = { force: false };
+const syncOptions = { force: false };
 
 
 // Routes
