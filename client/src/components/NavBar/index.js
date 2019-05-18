@@ -74,18 +74,12 @@ class Navbar extends Component {
   
   render() {
     return (
-    // <div>
-    //   <div className="container">
-    //{this.state.map(item => {
-    // return (
-    
-      <div>
-      
+      <div>   
         <div>
           <div>
 
             < nav >
-              <div className="nav-wrapper z-depth-3">               {/* THIS IS WHERE THE SUMMARY WILL GO SANTIAGO *key={item.sentToken}*/}
+              <div className="nav-wrapper z-depth-3"> 
                 <a href="/home" className="center brand-logo">ThisforThat</a>
                 <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
                 <ul className="left hide-on-med-and-down">
@@ -99,8 +93,8 @@ class Navbar extends Component {
                 <ul className="right hide-on-med-and-down">
                   <li>
                   </li>
-                  <li><a href="/transaction">Transactions</a></li>
                   <li><a href="/profile"><i className="fas fa-user-circle fa-lg"></i>{this.state.userName}</a></li>
+                  <li><a href="/transaction">Transactions</a></li>
                   <li><a href="/api/logout">Logout</a></li>
                 </ul>
               </div>
@@ -108,9 +102,9 @@ class Navbar extends Component {
 
 
             <ul className="sidenav" id="mobile-demo">
+            <li><a href="/profile"><i className="fas fa-user-circle fa-lg"></i>{this.state.userName}</a></li>
               <li><a href="/home">Home</a></li>
               <li><a href="/transaction">Transactions</a></li>
-              <li><a href="/profile"><i className="fas fa-user-circle fa-lg"></i>{this.state.userName}</a></li>
               <li><a href="/api/logout">Logout</a></li>
               <li>
                 <a>Token Bank:</a>
@@ -121,14 +115,9 @@ class Navbar extends Component {
           </div >
           <a href="#" data-target="slide-out" className="sidenav-trigger"></a>
         </div >
-
       </div >
     )
- // })} 
-// </div>
-// </div>
- }
-
+  }
 }
 
 export default Navbar

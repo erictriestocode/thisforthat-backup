@@ -55,21 +55,16 @@ class Profile extends Component {
                                 <div className="timeline-event" key={item.id}>
                                     <div className="card timeline-content">
                                         <div className="card-content">
-                                            <span className="card-title activator grey-text text-darken-4">Transaction Amount: {item.Tokens_Transaction_amount}<i
+                                            <span className="card-title activator grey-text text-darken-4">{item.User_Name_Providing_service} paid {item.User_Name_requesting_service}  {item.Tokens_Transaction_amount} tokens<i
                                                 className="material-icons right">more_vert</i></span>
                                                 
-                                            <button onClick={() => this.deletetrans(item.id)} onClick={() => refreshPage()} >{item.id}</button>
-
-                                            
-                                            
-
+                                            <button className="btn-small waves-effect waves-light blue darken-4" onClick={() => this.deletetrans(item.id)}>Delete</button>
+                                            {/* onClick={() => refreshPage() */}
                                         </div>
                                         <div className="card-reveal">
-                                            <span className="card-title grey-text text-darken-4">Payment for: {item.Transaction_Desc}<i
+                                        <span className="card-title grey-text text-darken-4">Payment for: {item.Transaction_Desc}<i
                                                 className="material-icons right">close</i></span>
-                                            <p>From: {item.User_Name_Providing_service}</p>
-                                            <p>Sent to: {item.User_Name_requesting_service}</p>
-                                            <p>Sent at: {moment(item.createdAt).format("dddd, MMMM Do YYYY, h:mm:ss a")}</p>
+                                            <p>Sent at: {moment(item.createdAt).format("dddd, MMMM Do YYYY, h:mm a")}</p>
                                         </div>
                                     </div>
                                 </div>
