@@ -22,8 +22,8 @@ const PORT = process.env.PORT || 5000;
 // Middleware
 app.use(express.urlencoded({ extended: false }));
 // HEROKU
-if (process.env.NODE_ENV === ' production'){
-  app.use(express.static('client/build'));
+if (process.env.NODE_ENV === "production"){
+  app.use(express.static("client/build"));
 };
 app.use(bodyParser());
 // app.use(cookieParser());
