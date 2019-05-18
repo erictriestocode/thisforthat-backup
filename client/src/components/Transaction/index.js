@@ -39,11 +39,11 @@ class Transaction extends Component {
 
     //grab user name requesting transaction from the API
     UserRequesting = () => {
-        return axios.get('/api/findalltransUser')
+        return axios.get('/api/signeduser')
             .then((res) => {
-                this.setState({ User_Name_requesting_service: res.data.dbtransaction[0].User_Name_requesting_service, UserId: res.data.dbtransaction[0].UserId });
-                console.log("username sending : ", res.data.dbtransaction[0].User_Name_requesting_service);
-                console.log("username sending : ", res.data.dbtransaction[0].UserId);
+                this.setState({ User_Name_requesting_service: res.data[0].username, UserId: res.data[0].id });
+                console.log("username sending : ", res.data[0].username);
+                console.log("username sending : ", res.data[0].id);
 
             });
     };
@@ -92,7 +92,7 @@ class Transaction extends Component {
                                     className="form-control"
                                     type="text"
                                     name="Transaction_Desc"
-                                    placeholder="Write a description for your trasnaction"
+                                    placeholder="Write a description for your transaction"
                                     onChange={this.handleTextChange}
                                 />
                                 <br />
@@ -121,7 +121,7 @@ class Transaction extends Component {
                                 {/* <p className="cool-font">AailableTokensBalance</p>
                         <input className="form-control" rows="3" id="TotalTokensBalance" placeholder="Total Tokens Balance"></input> */}
 
-                                <button id="transreques-submit" className="btn btn-lg pull-right" href="profile.html">Submit!</button>
+                                <button id="transreques-submit" className="btn btn-lg pull-right" >Submit!</button>
                             </div>
                         </div>
                     </form>

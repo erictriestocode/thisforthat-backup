@@ -108,3 +108,6 @@ color: blue;
   margin: 6px;
 }
 
+#button.btn-large.waves-effect.waves-light.red{
+  font-size:6px;
+}
