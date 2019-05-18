@@ -21,7 +21,6 @@ class Navbar extends Component {
     var instance = M.Sidenav.init(elem, {
       edge: "left",
       inDuration: 250
-
     });
   }
 

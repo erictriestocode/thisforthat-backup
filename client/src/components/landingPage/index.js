@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import "./style.css";
-// import NavBar1 from '../NavBar1';
-
-
 
 class LandingPage extends Component {
     render() {
         return (
             <div>
-             {/* <NavBar1/> */}
-                {/* <div className="container"> */}
-
+                <nav>
+                    <div className="nav-wrapper z-depth-3">             
+                        <div className="center brand-logo">ThisforThat</div>
+                    </div>
+                </nav>		
                 {/* rotating start */}
                 <div class="hide-on-small-only">
                     <div className="row center">

@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import { createBrowserHistory } from 'history';
 import axios from 'axios';
 import "./style.css";
+import M from "materialize-css/dist/js/materialize.min.js";
+import "materialize-css/dist/css/materialize.min.css";
 
 class Registration extends Component {
     state = {
@@ -24,6 +26,13 @@ class Registration extends Component {
         // functionToPushDataIntoDB(this.state)
         // console.log(this.state);
     }
+
+    componentDidMount() {
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.collapsible');
+            var instances = M.Collapsible.init(elems);
+          });
+      }
 
     registerUser = e => {
         console.log("Registration Process Started!");
@@ -75,21 +84,17 @@ class Registration extends Component {
     render() {
         return (
             <div>
-                {/* <center> */}
-                <div className="card-panel white light-2">
-                    <div id="top">
-                        <div className="card-panel blue darken-4">
-                            <span className="grey-text text-lighten-2" id="appName">
-                                <h1>Register</h1>
-                            </span>
-                            <span className="grey-text text-lighten-2">
-                                <p className="create-account"> Please fill in this form to create an account. </p>
-                            </span>
-                        </div>
-                    </div>
+                <div className="card-panel blue darken-4">
+                    <span className="grey-text text-lighten-2">
+                    <div className="center brand-logo">ThisforThat</div>
+                    </span>
 
-                    <div className="container signin">
-                        <p><a href="/signinform">Already have an account? Login</a></p>
+                    <span className="grey-text text-lighten-2" id="appName">
+                        <h1 className="signin">Register</h1>
+                    </span>
+                </div>
+                <br></br>
+                        <p className="alreadyHaveAccount center"><a href="/signinform">Already have an account? Login</a></p>
                         <form
                             id="RecruitForm"
                             onSubmit={this.registerUser}
@@ -124,31 +129,37 @@ class Registration extends Component {
                             />
                             <br />
                             {/* <input type="submit" value="Register" className="btn-large waves-effect waves-light green" /> */}
-
+                            
                             <div className="container termsConditions">
-                                <p>The content and functionality of this website is designed for law-abiding citizens with the intent to
+                             <ul class="collapsible">
+                                <li>
+                                <div class="collapsible-header"><i class="material-icons">view_headline</i>Read the Terms & Conditions</div>
+                                <div class="collapsible-body"><span>
+                                <p className= "tctext">The content and functionality of this website is designed for law-abiding citizens with the intent to
                 simplify and quantify law-abiding activities.</p>
-                                <p>ThisforThat does not condone the use of its’ proprietary app for transactions based in coercion or
+                        <p className= "tctext">ThisforThat does not condone the use of its’ proprietary app for transactions based in coercion or
                                     manipulation; any criminals in use of app for malice intent will be removed from the community.
                                     ThisforThat encourages users to follow the golden rule, “do onto others as you would have them do onto
                 you” and is a strong ally to abuse victims.</p>
-                                <p>By clicking the ‘Register’ button above, you designate that you will not host, harbor or pursue criminal
+                        <p className= "tctext">By clicking the ‘Register’ button above, you designate that you will not host, harbor or pursue criminal
                 activities via ThisforThat and will be an ally to those who are bullied. </p>
                                 <p></p>
                                 <p></p>
+                            </span>
                             </div>
+                                </li>
+                                </ul>
                             <div className="container buttons">
                                 <input type="submit" value="Register" className="btn-large waves-effect waves-light green" />
 
                                 <br></br>
                                 <br></br>
-                                <a href="https://www.stopbullying.gov/" id="button" className="btn-large waves-effect waves-light red">I prefer to stay a bully</a>
+                                <a href="https://www.stopbullying.gov/" id="stopBullyButton" className="btn-large waves-effect waves-light red">I prefer to stay a bully</a>
                                 <p></p>
                             </div>
+                            </div>
                         </form>
-                    </div>
-                </div>
-            </div>
+                        </div>
         )
     }
 }

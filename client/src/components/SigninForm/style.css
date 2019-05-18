@@ -1,7 +1,15 @@
 
 
 .signin-container { 
-    padding: 47px;
+  padding: 35px;
+}
+
+.signin {
+  font-size: 30px;
+  color: white;
+  line-height: 110%;
+  text-align: center;
+  margin: 0;
 }
 
 form { 
@@ -9,12 +17,24 @@ form {
   padding: 30px;
 }
 
+.brand-logo {
+  font-family: 'Lobster';
+  color: #fff;
+  font-size: 3.1rem;
+  text-shadow: 1px 1px rgb(138, 138, 138), 2px 2px rgb(138, 138, 138), 3px 3px rgb(138, 138, 138);
+}
+
+
 label {
   /* color: whitesmoke;
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 19px; */
   font-size: 1.5rem;
   color: black;
+}
+
+.card-panel { 
+  margin: 0;
 }
 
 
