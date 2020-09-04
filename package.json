@@ -27,7 +27,7 @@
     "passport-local": "^1.0.0",
     "path": "^0.12.7",
     "request": "^2.88.0",
-    "sequelize": "^4.44.3"
+    "sequelize": "^5.15.1"
   },
   "directories": {
     "test": "test"
